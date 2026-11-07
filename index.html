@@ -73,8 +73,10 @@ p{color:#c9d1df;font-size:15px;margin-top:16px;max-width:760px}
 
 /* books */
 .books{display:grid;gap:16px;margin-top:26px}
-.book{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:center;background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
-.spine{height:84px;border-radius:6px 10px 10px 6px;display:grid;place-items:center;font-weight:700;font-size:20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));box-shadow:inset 6px 0 0 rgba(0,0,0,.25)}
+.book{display:grid;grid-template-columns:84px 1fr auto;gap:20px;align-items:center;background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.cover{width:84px;height:auto;border-radius:4px 8px 8px 4px;box-shadow:0 8px 22px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.06);transition:transform .2s}
+.book:hover .cover{transform:translateY(-3px) rotate(-1deg)}
+.spine{width:84px;height:120px;border-radius:6px 10px 10px 6px;display:grid;place-items:center;font-weight:700;font-size:20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));box-shadow:inset 6px 0 0 rgba(0,0,0,.25)}
 .spine.soon{background:linear-gradient(160deg,#2a3142,#3a4359);color:var(--muted)}
 .book h4{font-size:16px;font-weight:600}
 .book p{margin:4px 0 0;font-size:14px;color:var(--muted)}
@@ -111,9 +113,10 @@ footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padd
 }
 @media (max-width:620px){
   .grid,.links,.contacts{grid-template-columns:1fr}
-  .book{grid-template-columns:48px 1fr}
+  .book{grid-template-columns:64px 1fr}
+  .cover{width:64px}
   .book .btn,.book .tag{grid-column:1/-1;justify-self:start}
-  .spine{height:64px;font-size:16px}
+  .spine{width:64px;height:92px;font-size:16px}
   h2{font-size:26px}
 }
 </style>
@@ -182,10 +185,10 @@ footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padd
       <h2>BriskNest Tech Guides</h2>
       <p>Hands-on books that teach technology by building real projects. Each one comes with companion code on GitHub.</p>
       <div class="books">
-        <div class="book"><div class="spine">1</div>
+        <div class="book"><img class="cover" src="book1.webp" alt="Claude Code Without the Chaos cover" width="420" height="600" loading="lazy">
           <div><h4>Claude Code Without the Chaos</h4><p>Build, test, and ship real software with an AI coding agent.</p></div>
           <a class="btn" href="https://github.com/hazhar463/claude-code-without-the-chaos">Companion code →</a></div>
-        <div class="book"><div class="spine">2</div>
+        <div class="book"><img class="cover" src="book2.webp" alt="AI Agents &amp; Automation for Beginners cover" width="420" height="600" loading="lazy">
           <div><h4>AI Agents & Automation for Beginners</h4><p>Build controlled workflows that observe, decide, and act.</p></div>
           <a class="btn" href="https://github.com/hazhar463/ai-agents-for-beginners">Companion code →</a></div>
         <div class="book"><div class="spine soon">3</div>
