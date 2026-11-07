@@ -82,6 +82,12 @@ p{color:#c9d1df;font-size:15px;margin-top:16px;max-width:760px}
 .book p{margin:4px 0 0;font-size:14px;color:var(--muted)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;font-size:13px;font-weight:500;border:1px solid var(--line);background:rgba(44,156,219,.12);color:var(--accent);white-space:nowrap}
 .btn:hover{background:rgba(44,156,219,.22)}
+.actions{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.actions .btn{justify-content:center}
+.btn.buy{background:rgba(255,184,77,.12);color:#ffb84d}
+.btn.buy:hover{background:rgba(255,184,77,.22)}
+.btn.soon{opacity:.7;cursor:default;border-style:dashed}
+.btn.soon:hover{background:rgba(255,184,77,.12)}
 .tag{font-size:12px;color:var(--muted);border:1px dashed var(--line);padding:8px 14px;border-radius:10px;white-space:nowrap}
 
 /* resume timeline */
@@ -115,7 +121,7 @@ footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padd
   .grid,.links,.contacts{grid-template-columns:1fr}
   .book{grid-template-columns:64px 1fr}
   .cover{width:64px}
-  .book .btn,.book .tag{grid-column:1/-1;justify-self:start}
+  .book .actions,.book .tag{grid-column:1/-1;justify-self:start}
   .spine{width:64px;height:92px;font-size:16px}
   h2{font-size:26px}
 }
@@ -187,10 +193,14 @@ footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padd
       <div class="books">
         <div class="book"><img class="cover" src="book1.webp" alt="Claude Code Without the Chaos cover" width="420" height="600" loading="lazy">
           <div><h4>Claude Code Without the Chaos</h4><p>Build, test, and ship real software with an AI coding agent.</p></div>
-          <a class="btn" href="https://github.com/hazhar463/claude-code-without-the-chaos">Companion code →</a></div>
+          <div class="actions"><a class="btn" href="https://github.com/hazhar463/claude-code-without-the-chaos">Companion code →</a>
+            <!-- AMAZON: replace this span with <a class="btn buy" href="AMAZON_LINK">Buy on Amazon →</a> -->
+            <span class="btn buy soon">Buy on Amazon · Coming soon</span></div></div>
         <div class="book"><img class="cover" src="book2.webp" alt="AI Agents &amp; Automation for Beginners cover" width="420" height="600" loading="lazy">
           <div><h4>AI Agents & Automation for Beginners</h4><p>Build controlled workflows that observe, decide, and act.</p></div>
-          <a class="btn" href="https://github.com/hazhar463/ai-agents-for-beginners">Companion code →</a></div>
+          <div class="actions"><a class="btn" href="https://github.com/hazhar463/ai-agents-for-beginners">Companion code →</a>
+            <!-- AMAZON: replace this span with <a class="btn buy" href="AMAZON_LINK">Buy on Amazon →</a> -->
+            <span class="btn buy soon">Buy on Amazon · Coming soon</span></div></div>
         <div class="book"><div class="spine soon">3</div>
           <div><h4>Claude for Beginners</h4><p>Coming soon.</p></div><span class="tag">Coming soon</span></div>
         <div class="book"><div class="spine soon">4</div>
