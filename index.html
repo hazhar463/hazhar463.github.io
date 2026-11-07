@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hassan Azhar · Telecom Engineer & Author</title>
+<meta name="description" content="Hassan Azhar: Principal Technical Leader at Nokia, adjunct professor of data analytics, and author of the BriskNest Tech Guides.">
+<meta property="og:title" content="Hassan Azhar · Telecom Engineer & Author">
+<meta property="og:description" content="5G network automation, data analytics, and hands-on books on AI agents and code.">
+<meta property="og:url" content="https://hazhar463.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17; --card:rgba(22,27,38,.72); --card-solid:#161b26; --tile:rgba(255,255,255,.035);
+  --line:rgba(255,255,255,.08); --text:#e9edf5; --muted:#9aa4b8; --accent:#2c9cdb; --accent-2:#0a66c2;
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden}
+/* soft glow blobs behind the glass cards */
+body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(110px);opacity:.55}
+body::before{width:520px;height:520px;background:#0a66c2;top:-160px;left:-140px}
+body::after{width:480px;height:480px;background:#5b3fd6;bottom:-180px;right:-120px;opacity:.4}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:1180px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+
+/* ---------- sidebar ---------- */
+.side{padding:32px 26px;position:sticky;top:32px;text-align:center}
+.avatar{width:120px;height:120px;margin:0 auto 18px;border-radius:28px;display:grid;place-items:center;font-size:40px;font-weight:600;letter-spacing:1px;
+  background:linear-gradient(135deg,var(--accent-2),var(--accent));box-shadow:0 10px 30px rgba(44,156,219,.35)}
+.side h1{font-size:24px;font-weight:600}
+.chip{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:10px;font-size:12px;background:var(--tile);border:1px solid var(--line);color:var(--muted)}
+.sep{height:1px;background:var(--line);margin:24px 0}
+.contacts{list-style:none;display:grid;gap:16px;text-align:left}
+.contacts li{display:flex;gap:14px;align-items:center;min-width:0}
+.ico{flex:0 0 44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--tile);border:1px solid var(--line);color:var(--accent)}
+.ico svg{width:19px;height:19px}
+.contacts small{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contacts span,.contacts a{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.contacts a:hover{color:var(--accent)}
+.status{margin-top:24px;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 10px #3ddc84}
+
+/* ---------- main ---------- */
+.main{position:relative;padding:40px 40px 44px;min-height:620px}
+nav.tabs{position:absolute;top:0;right:0;display:flex;gap:4px;padding:6px 14px;background:rgba(255,255,255,.04);border-left:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0 var(--radius) 0 var(--radius)}
+nav.tabs button{background:none;border:0;color:var(--muted);font:500 14px Poppins,sans-serif;padding:12px 14px;cursor:pointer;border-radius:10px;transition:color .2s}
+nav.tabs button:hover{color:var(--text)}
+nav.tabs button.active{color:var(--accent)}
+.panel{display:none;animation:fade .35s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:32px;font-weight:600;margin-bottom:10px}
+h2::after{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--accent);margin-top:12px}
+h3{font-size:20px;font-weight:600;margin:34px 0 18px}
+p{color:#c9d1df;font-size:15px;margin-top:16px;max-width:760px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.tile{background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:18px;transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-3px);border-color:rgba(44,156,219,.45)}
+.tile .ico{flex-basis:46px;height:46px}
+.tile h4{font-size:16px;font-weight:600;margin-bottom:4px}
+.tile div p{margin:0;font-size:14px;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stat{background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--accent);font-weight:600}
+.stat span{font-size:12px;color:var(--muted)}
+
+/* books */
+.books{display:grid;gap:16px;margin-top:26px}
+.book{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:center;background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.spine{height:84px;border-radius:6px 10px 10px 6px;display:grid;place-items:center;font-weight:700;font-size:20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));box-shadow:inset 6px 0 0 rgba(0,0,0,.25)}
+.spine.soon{background:linear-gradient(160deg,#2a3142,#3a4359);color:var(--muted)}
+.book h4{font-size:16px;font-weight:600}
+.book p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;font-size:13px;font-weight:500;border:1px solid var(--line);background:rgba(44,156,219,.12);color:var(--accent);white-space:nowrap}
+.btn:hover{background:rgba(44,156,219,.22)}
+.tag{font-size:12px;color:var(--muted);border:1px dashed var(--line);padding:8px 14px;border-radius:10px;white-space:nowrap}
+
+/* resume timeline */
+.tl{list-style:none;margin-top:8px;border-left:2px solid var(--line);padding-left:28px;display:grid;gap:26px}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl h4{font-size:16px;font-weight:600}
+.tl em{font-style:normal;font-size:13px;color:var(--accent)}
+.tl p{margin-top:6px;font-size:14px}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.skills span{font-size:13px;padding:7px 14px;border-radius:999px;background:var(--tile);border:1px solid var(--line)}
+
+/* contact */
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+.links a{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;background:var(--tile);border:1px solid var(--line);transition:border-color .2s}
+.links a:hover{border-color:rgba(44,156,219,.5)}
+.links small{display:block;color:var(--muted);font-size:12px}
+
+footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padding-top:8px}
+
+@media (max-width:960px){
+  .wrap{grid-template-columns:1fr;padding:24px 16px}
+  .side{position:static}
+  .contacts{grid-template-columns:1fr 1fr}
+  .main{padding:90px 22px 30px}
+  nav.tabs{left:0;justify-content:space-around;border-radius:var(--radius) var(--radius) 0 0;border-left:0}
+  nav.tabs button{padding:12px 6px;font-size:13px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  .grid,.links,.contacts{grid-template-columns:1fr}
+  .book{grid-template-columns:48px 1fr}
+  .book .btn,.book .tag{grid-column:1/-1;justify-self:start}
+  .spine{height:64px;font-size:16px}
+  h2{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== Sidebar ===== -->
+  <aside class="card side">
+    <div class="avatar">HA</div>
+    <h1>Hassan Azhar</h1>
+    <span class="chip">Telecom Engineer · Author</span>
+    <div class="sep"></div>
+    <ul class="contacts">
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><small>Location</small><span>Dallas–Fort Worth, TX</span></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+        <div><small>Website</small><a href="https://www.hazhar.com">hazhar.com</a></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+        <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/hazhar/">in/hazhar</a></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></span>
+        <div><small>GitHub</small><a href="https://github.com/hazhar463">hazhar463</a></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M20 17v5H6.5A2.5 2.5 0 0 1 4 19.5"/></svg></span>
+        <div><small>ORCID</small><a href="https://orcid.org/0000-0001-6392-8592">0000-0001-6392-8592</a></div></li>
+    </ul>
+    <div class="status"><span class="dot"></span>Building the BriskNest Tech Guides</div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <main class="card main">
+    <nav class="tabs" role="tablist">
+      <button class="active" data-tab="about">About</button>
+      <button data-tab="books">Books</button>
+      <button data-tab="resume">Resume</button>
+      <button data-tab="contact">Contact</button>
+    </nav>
+
+    <!-- About -->
+    <section class="panel active" id="about">
+      <h2>About Me</h2>
+      <p>Most telecom teams have more network data than they can use. I turn that data into automation and better decisions, and I teach others to do the same.</p>
+      <p>I'm a Principal Technical Leader at Nokia with 15+ years in telecom, working on 5G network automation and data analytics. Outside work I teach data analytics as an adjunct professor and write hands-on books that teach technology by building real things, step by step.</p>
+
+      <div class="stats">
+        <div class="stat"><b>15+</b><span>years in telecom</span></div>
+        <div class="stat"><b>12</b><span>years at Nokia</span></div>
+        <div class="stat"><b>6</b><span>countries trained</span></div>
+        <div class="stat"><b>2</b><span>books out now</span></div>
+      </div>
+
+      <h3>What I'm Doing</h3>
+      <div class="grid">
+        <div class="tile"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg></span>
+          <div><h4>5G Network Automation</h4><p>Tools and process changes that remove what slows engineering down, from test frameworks to KPI dashboards.</p></div></div>
+        <div class="tile"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+          <div><h4>Data Analytics</h4><p>Turning network data into decisions with machine learning, big data analytics and data science.</p></div></div>
+        <div class="tile"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg></span>
+          <div><h4>AI Agents & Automation</h4><p>Building controlled AI workflows and coding with Claude Code and local LLMs.</p></div></div>
+        <div class="tile"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+          <div><h4>Teaching & Writing</h4><p>Teaching data analytics and networking, and writing the BriskNest Tech Guides series.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section class="panel" id="books">
+      <h2>BriskNest Tech Guides</h2>
+      <p>Hands-on books that teach technology by building real projects. Each one comes with companion code on GitHub.</p>
+      <div class="books">
+        <div class="book"><div class="spine">1</div>
+          <div><h4>Claude Code Without the Chaos</h4><p>Build, test, and ship real software with an AI coding agent.</p></div>
+          <a class="btn" href="https://github.com/hazhar463/claude-code-without-the-chaos">Companion code →</a></div>
+        <div class="book"><div class="spine">2</div>
+          <div><h4>AI Agents & Automation for Beginners</h4><p>Build controlled workflows that observe, decide, and act.</p></div>
+          <a class="btn" href="https://github.com/hazhar463/ai-agents-for-beginners">Companion code →</a></div>
+        <div class="book"><div class="spine soon">3</div>
+          <div><h4>Claude for Beginners</h4><p>Coming soon.</p></div><span class="tag">Coming soon</span></div>
+        <div class="book"><div class="spine soon">4</div>
+          <div><h4>Microsoft Copilot for Beginners</h4><p>Coming soon.</p></div><span class="tag">Coming soon</span></div>
+      </div>
+      <p>More books, including children's books, are at <a href="https://www.hazhar.com" style="color:var(--accent)">hazhar.com</a>.</p>
+    </section>
+
+    <!-- Resume -->
+    <section class="panel" id="resume">
+      <h2>Resume</h2>
+      <h3>Experience</h3>
+      <ul class="tl">
+        <li><h4>Principal Technical Leader · Nokia</h4><em>5G network automation and data analytics</em>
+          <p>Works with R&amp;D and architects to find what's slowing engineering down and fix it. Worked on the nationwide 5G N41 launch; built test frameworks and KPI dashboards that make testing faster and reporting more accurate; mentors technical leaders.</p></li>
+        <li><h4>Technical Trainer · Nokia Academy</h4><em>Training</em>
+          <p>Trained engineers and customers in 6 countries.</p></li>
+      </ul>
+      <h3>Teaching</h3>
+      <ul class="tl">
+        <li><h4>Adjunct Professor, Data Analytics · City University of Seattle</h4>
+          <p>Has also taught graduate courses in data mining, data visualization and big data.</p></li>
+        <li><h4>Instructor, Computer Networking · Henry Ford College</h4></li>
+      </ul>
+      <h3>Education & Certifications</h3>
+      <ul class="tl">
+        <li><h4>PhD in Information Technology · City University of Seattle</h4><em>In progress · AI and data science</em></li>
+        <li><h4>Google Cybersecurity Certificate</h4></li>
+      </ul>
+      <h3>Skills</h3>
+      <div class="skills">
+        <span>Machine Learning</span><span>Big Data Analytics</span><span>Cybersecurity</span><span>Data Science</span>
+        <span>Python</span><span>AI Agents</span><span>Claude Code</span><span>Local LLMs (Ollama)</span>
+        <span>Docker</span><span>Jenkins</span><span>Kotlin</span><span>Swift</span><span>4G / 5G Networks</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="panel" id="contact">
+      <h2>Contact</h2>
+      <p>If you're building a program in AI, data science or cybersecurity, or you work on network automation in telecom, get in touch.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/hazhar/"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span><div><b>LinkedIn</b><small>Message me on LinkedIn</small></div></a>
+        <a href="https://www.hazhar.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><div><b>Website</b><small>hazhar.com</small></div></a>
+        <a href="https://github.com/hazhar463"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></span><div><b>GitHub</b><small>github.com/hazhar463</small></div></a>
+        <a href="https://orcid.org/0000-0001-6392-8592"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg></span><div><b>ORCID</b><small>Research profile</small></div></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="yr"></span> Hassan Azhar · Hosted on GitHub Pages</footer>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('nav.tabs button');
+function show(id){
+  if(!document.getElementById(id)) id='about';
+  tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));
+}
+tabs.forEach(b=>b.addEventListener('click',()=>{history.replaceState(null,'','#'+b.dataset.tab);show(b.dataset.tab);}));
+show(location.hash.slice(1)||'about');
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
