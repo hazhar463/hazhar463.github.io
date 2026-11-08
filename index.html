@@ -86,6 +86,9 @@ p{color:#c9d1df;font-size:15px;margin-top:16px;max-width:760px}
 .actions .btn{justify-content:center}
 .btn.buy{background:rgba(255,184,77,.12);color:#ffb84d}
 .btn.buy:hover{background:rgba(255,184,77,.22)}
+.imgbtn{display:block;line-height:0;border-radius:10px;transition:transform .15s,filter .15s}
+.imgbtn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.imgbtn img{display:block;width:200px;height:auto}
 .book .price{display:inline-block;margin-top:8px;font-size:12px;font-weight:500;color:#ffb84d;letter-spacing:.02em}
 .btn.soon{opacity:.7;cursor:default;border-style:dashed}
 .btn.soon:hover{background:rgba(255,184,77,.12)}
@@ -194,12 +197,12 @@ footer{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted);padd
       <div class="books">
         <div class="book"><img class="cover" src="book1.webp" alt="Claude Code Without the Chaos cover" width="420" height="600" loading="lazy">
           <div><h4>Claude Code Without the Chaos</h4><p>Build, test, and ship real software with an AI coding agent: a hands-on guide for beginners.</p><span class="price">Paperback · $29.99</span></div>
-          <div class="actions"><a class="btn" href="https://github.com/hazhar463/claude-code-without-the-chaos">Companion code →</a>
-            <a class="btn buy" href="https://www.amazon.com/dp/B0HQVZN7KK" target="_blank" rel="noopener">Buy on Amazon →</a></div></div>
+          <div class="actions"><a class="imgbtn" href="https://www.amazon.com/dp/B0HQVZN7KK" target="_blank" rel="noopener"><img src="assets/buy-amazon.svg" width="200" height="50" alt="Buy on Amazon"></a>
+            <a class="imgbtn" href="https://github.com/hazhar463/claude-code-without-the-chaos"><img src="assets/companion-code.svg" width="200" height="50" alt="Companion code on GitHub"></a></div></div>
         <div class="book"><img class="cover" src="book2.webp" alt="AI Agents &amp; Automation for Beginners cover" width="420" height="600" loading="lazy">
           <div><h4>AI Agents & Automation for Beginners</h4><p>Build controlled workflows that observe, decide, and act.</p><span class="price">Paperback · $24.99</span></div>
-          <div class="actions"><a class="btn" href="https://github.com/hazhar463/ai-agents-for-beginners">Companion code →</a>
-            <a class="btn buy" href="https://www.amazon.com/dp/B0HQVW4P7H" target="_blank" rel="noopener">Buy on Amazon →</a></div></div>
+          <div class="actions"><a class="imgbtn" href="https://www.amazon.com/dp/B0HQVW4P7H" target="_blank" rel="noopener"><img src="assets/buy-amazon.svg" width="200" height="50" alt="Buy on Amazon"></a>
+            <a class="imgbtn" href="https://github.com/hazhar463/ai-agents-for-beginners"><img src="assets/companion-code.svg" width="200" height="50" alt="Companion code on GitHub"></a></div></div>
         <div class="book"><div class="spine soon">3</div>
           <div><h4>Claude for Beginners</h4><p>Coming soon.</p></div><span class="tag">Coming soon</span></div>
         <div class="book"><div class="spine soon">4</div>

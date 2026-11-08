@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60" role="img" aria-label="Buy on Amazon">
+  <rect width="240" height="60" rx="12" fill="#2F2F2F"/>
+  <g transform="translate(20 17)" fill="none" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 2h4l3.2 14h14.4l3-10H7"/>
+    <circle cx="10.5" cy="23" r="2" fill="#FF9900" stroke="none"/>
+    <circle cx="21" cy="23" r="2" fill="#FF9900" stroke="none"/>
+  </g>
+  <text x="62" y="38" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#ffffff">Buy on Amazon</text>
+</svg>
