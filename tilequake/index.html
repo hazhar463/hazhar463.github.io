@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tilequake: Block Puzzle — How to Play, Features &amp; Roadmap | BriskNest Games</title>
+<meta name="description" content="Tilequake is a gem block puzzle by BriskNest: drag blocks, break rows and columns, chain combos. How to play, every feature in Version 1, the roadmap and the iPhone plan.">
+<meta property="og:title" content="Tilequake: Block Puzzle">
+<meta property="og:description" content="Break rows. Chain combos. Shake the board! 120 Adventure levels, Daily Quakes and Weekly Events.">
+<meta property="og:image" content="img/feature.webp">
+<link rel="icon" href="favicon.png">
+<style>
+:root{
+  --bg:#1a1240; --bg2:#2a1f6b; --panel:#2e2470; --panel2:#3d2e8f; --edge:#6e5fd6;
+  --gold:#ffc93c; --gold2:#ffe07a; --text:#f4f0ff; --soft:#d9ccff; --muted:#a99be0;
+  --green:#35b34a; --orange:#e8862a; --pink:#b8399c; --blue:#5a4bd1; --red:#e8402f; --teal:#2db89c;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Poppins","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--text);
+  background:radial-gradient(1200px 600px at 80% -10%,#4b2a8f 0%,transparent 60%),linear-gradient(180deg,var(--bg2),var(--bg) 40%,#120c33);
+  line-height:1.6}
+a{color:var(--gold2)}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(18,12,51,.88);backdrop-filter:blur(8px);border-bottom:1px solid rgba(110,95,214,.35)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+nav .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;color:var(--gold);text-decoration:none}
+nav .brand img{width:34px;height:34px;border-radius:9px}
+nav .links{display:flex;gap:16px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav .links a{color:var(--soft);text-decoration:none;font-size:14px;white-space:nowrap}
+nav .links a:hover{color:var(--gold2)}
+
+/* hero */
+.hero{padding:56px 0 30px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,7vw,78px);line-height:1;margin:0 0 6px;font-weight:900;letter-spacing:1px;
+  color:var(--gold2);text-shadow:0 4px 0 #7a3a10,0 0 30px rgba(255,201,60,.35)}
+.hero .tag{font-size:22px;color:var(--soft);margin:0 0 18px}
+.hero p{color:var(--soft);font-size:17px;max-width:560px}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;
+  box-shadow:0 5px 0 rgba(0,0,0,.35);transition:transform .1s}
+.btn:active{transform:translateY(3px)}
+.btn.green{background:var(--green)} .btn.blue{background:var(--blue)} .btn.ghost{background:transparent;border:2px solid var(--edge);box-shadow:none}
+.btn small{display:block;font-weight:500;font-size:11px;opacity:.85;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:rgba(0,0,0,.25);border:1px solid rgba(110,95,214,.5);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--soft)}
+.hero .phone{justify-self:center;width:min(340px,80vw);border-radius:36px;padding:10px;background:#0c0824;box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 2px #3d2e8f}
+.hero .phone img{border-radius:28px}
+
+/* sections */
+section{padding:56px 0}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;color:var(--gold2)}
+.lead{color:var(--soft);margin:0 0 28px;max-width:760px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(110,95,214,.55);border-radius:var(--r);padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.card h3{margin:0 0 6px;font-size:19px;color:#fff}
+.card p{margin:0;color:var(--soft);font-size:15px}
+.card ul{margin:8px 0 0;padding-left:20px;color:var(--soft);font-size:15px}
+.card.hot{border-color:var(--gold)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#3a2000;font-weight:800;margin-bottom:10px}
+.icon{font-size:30px;line-height:1;margin-bottom:8px}
+
+/* gems */
+.gem{width:26px;height:26px;border-radius:6px;display:inline-block;vertical-align:middle;position:relative;
+  box-shadow:inset 0 0 0 4px rgba(255,255,255,.25),inset -4px -4px 0 rgba(0,0,0,.25),0 2px 0 rgba(0,0,0,.4)}
+.gem.r{background:#e0313f}.gem.b{background:#2f6fe8}.gem.g{background:#2db84c}.gem.o{background:#f39a1e}.gem.p{background:#9b45d8}.gem.c{background:#2ccfc4}
+.gem.rb{background:conic-gradient(#ff4b4b,#ffb13c,#ffe62e,#39ff6a,#2ecfff,#7a5cff,#ff4bd8,#ff4b4b)}
+.gem.ice{background:#2f6fe8;outline:3px solid #dff6ff;outline-offset:-3px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:15px;overflow:hidden;border-radius:12px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(110,95,214,.3)}
+th{background:rgba(0,0,0,.25);color:var(--gold2);font-weight:700}
+td{color:var(--soft)}
+.tablewrap{overflow-x:auto;background:rgba(0,0,0,.15);border-radius:12px;border:1px solid rgba(110,95,214,.4)}
+
+/* gallery */
+.gallery{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x mandatory}
+.gallery figure{margin:0;flex:0 0 220px;scroll-snap-align:start}
+.gallery img{border-radius:18px;border:2px solid #3d2e8f}
+.gallery figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+
+/* roadmap */
+.timeline{position:relative;margin-left:14px;padding-left:28px;border-left:3px solid rgba(255,201,60,.4)}
+.milestone{position:relative;margin-bottom:26px}
+.milestone:before{content:"";position:absolute;left:-40px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(255,201,60,.2)}
+.milestone.now:before{background:var(--green);box-shadow:0 0 0 5px rgba(53,179,74,.25)}
+.milestone h3{margin:0;font-size:22px}
+.milestone .when{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase}
+.tick li,.soon li{list-style:none;position:relative;padding-left:4px}
+.tick li:before,.soon li:before{content:"✓";position:absolute;left:-20px;color:var(--green);font-weight:800}
+.soon li:before{content:"◆";color:var(--gold);font-size:12px;top:3px}
+.status{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.st-done{background:rgba(53,179,74,.25);color:#7ee28c}.st-next{background:rgba(255,201,60,.2);color:var(--gold2)}.st-plan{background:rgba(110,95,214,.3);color:var(--soft)}
+
+details{background:rgba(0,0,0,.18);border:1px solid rgba(110,95,214,.45);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:#fff}
+details p{color:var(--soft);margin:8px 0 0}
+
+footer{padding:36px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid rgba(110,95,214,.3);margin-top:30px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  nav .links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/icon.webp" alt="">TILEQUAKE</a>
+    <div class="links">
+      <a href="#how">How to play</a>
+      <a href="#modes">Modes</a>
+      <a href="#v1">Version 1</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#rollout">Rollout</a>
+      <a href="#apple">iPhone</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>TILEQUAKE</h1>
+      <div class="tag">Break rows. Chain combos. Shake the board!</div>
+      <p>A gem block puzzle from BriskNest. Drag glowing gem blocks onto an 8×8 board, fill rows and columns to break them apart, and build combo streaks that make the whole board quake. Easy to learn, endless to master, and free to play.</p>
+      <div class="badges">
+        <a class="btn green" href="https://play.google.com/store/apps/details?id=com.brisknest.tilequake">▶ <span><small>COMING SOON ON</small>Google Play</span></a>
+        <a class="btn ghost" href="#apple"> <span><small>PLANNED FOR</small>iPhone &amp; iPad</span></a>
+      </div>
+      <div class="chips">
+        <span class="chip">120 Adventure levels</span><span class="chip">Daily Quake</span><span class="chip">Weekly Events</span>
+        <span class="chip">Works offline</span><span class="chip">English · العربية · اردو · Español</span><span class="chip">Ages 13+</span>
+      </div>
+    </div>
+    <div class="phone"><img src="img/play.webp" alt="Tilequake gameplay: gem blocks on an 8 by 8 board with the Hold slot and boosters" width="480" height="1040"></div>
+  </div>
+</header>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="gallery" aria-label="Screenshots">
+      <figure><img src="img/title.webp" alt="Home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="img/map.webp" alt="Adventure map" loading="lazy"><figcaption>Adventure map</figcaption></figure>
+      <figure><img src="img/level.webp" alt="Adventure level with frozen blocks" loading="lazy"><figcaption>Frozen blocks</figcaption></figure>
+      <figure><img src="img/combo.webp" alt="Combo with breaking gems" loading="lazy"><figcaption>Combo streak</figcaption></figure>
+      <figure><img src="img/arabesque.webp" alt="Arabesque blocks on the Garden Arches background" loading="lazy"><figcaption>Arabesque style</figcaption></figure>
+      <figure><img src="img/event.webp" alt="Weekly Event" loading="lazy"><figcaption>Weekly Event</figcaption></figure>
+      <figure><img src="img/missions.webp" alt="Daily Missions" loading="lazy"><figcaption>Daily Missions</figcaption></figure>
+      <figure><img src="img/styles.webp" alt="Styles shop" loading="lazy"><figcaption>Styles</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ HOW TO PLAY -->
+<section id="how">
+  <div class="wrap">
+    <h2>How to play</h2>
+    <p class="lead">Every turn you get three pieces. Place them, break lines, and keep the board open. There is no timer and no rotating: plan ahead!</p>
+    <div class="grid g4">
+      <div class="card"><div class="num">1</div><h3>Drag a piece</h3><p>Pick up one of the three pieces in the tray and drop it anywhere it fits on the 8×8 board. A glowing preview shows where it lands.</p></div>
+      <div class="card"><div class="num">2</div><h3>Fill a line</h3><p>Complete a full row <b>or</b> column and it shatters. The preview lights up every line you are about to clear.</p></div>
+      <div class="card"><div class="num">3</div><h3>Chain combos</h3><p>Clear lines move after move to grow your combo streak. Your streak survives two moves without a clear — then it resets.</p></div>
+      <div class="card"><div class="num">4</div><h3>Don't run out of room</h3><p>When none of your pieces fit anywhere, the run ends. Use the Hold slot, boosters or an Aftershock to keep going.</p></div>
+    </div>
+
+    <h3 style="margin:36px 0 12px;font-size:24px">Scoring</h3>
+    <div class="grid g2">
+      <div class="tablewrap">
+        <table>
+          <tr><th>What you do</th><th>Points</th></tr>
+          <tr><td>Place a piece</td><td>1 point per block</td></tr>
+          <tr><td>Clear 1 line</td><td>10 × streak</td></tr>
+          <tr><td>Clear 2 lines at once</td><td>25 × streak</td></tr>
+          <tr><td>Clear 3 lines at once</td><td>45 × streak</td></tr>
+          <tr><td>Clear 4 lines at once</td><td>70 × streak</td></tr>
+          <tr><td>Clear 5 / 6+ lines at once</td><td>100 / 140 × streak</td></tr>
+          <tr><td>Break a rainbow gem</td><td>+50</td></tr>
+          <tr><td>All Clear (empty the whole board)</td><td>+300</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Combo streak</h3>
+        <p>Each move that clears at least one line adds 1 to your streak, and every line bonus is multiplied by it. A ×5 streak turns a 2-line clear from 25 into 125 points! Miss three moves in a row and the streak drops back to zero.</p>
+        <h3 style="margin-top:16px">Coins</h3>
+        <p>Every game pays coins (your score ÷ 20). You also earn coins from Adventure wins and stars, Daily Missions, Trophies, Weekly Event prizes and the 7-day Daily Gift.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:36px 0 12px;font-size:24px">Special gems &amp; the Hold slot</h3>
+    <div class="grid g3">
+      <div class="card"><div class="icon"><span class="gem rb"></span></div><h3>Rainbow gem</h3><p>Sometimes a piece carries a spinning rainbow gem. When it breaks, every gem of the board's most common colour breaks with it.</p></div>
+      <div class="card"><div class="icon"><span class="gem ice"></span></div><h3>Frozen block</h3><p>Found in Adventure. The first line clear only cracks the ice — the block stays. Clear its line again to break it.</p></div>
+      <div class="card"><div class="icon">📥</div><h3>Hold slot</h3><p>Drag a piece onto <b>HOLD</b> to keep it for later (one swap per new set of pieces). Drag the held piece onto the board any time.</p></div>
+    </div>
+
+    <h3 style="margin:36px 0 12px;font-size:24px">Boosters</h3>
+    <div class="grid g4">
+      <div class="card"><div class="icon">↶</div><h3>Undo</h3><p>Takes back your last move. 120 coins.</p></div>
+      <div class="card"><div class="icon">💣</div><h3>Bomb</h3><p>Tap the board to break a 3×3 area — ice too. 150 coins, or free by watching a short video (3 a day).</p></div>
+      <div class="card"><div class="icon">🔄</div><h3>Reroll</h3><p>Swap your three pieces for a fresh set. 100 coins.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>Hint</h3><p>Shows a good move. 5 free hints every day; after 10 seconds without a move the hint glows by itself.</p></div>
+    </div>
+    <p class="lead" style="margin-top:16px">Everyone starts with 2 Undos, 2 Bombs and 2 Rerolls. <b>Aftershock</b> (300 coins or a video): when you are out of room, it breaks the two fullest rows and two fullest columns so you can keep playing — once per game.</p>
+
+    <h3 style="margin:36px 0 12px;font-size:24px">Tips from the team</h3>
+    <div class="grid g3">
+      <div class="card"><h3>Keep a 3×3 hole</h3><p>The big 3×3 square and long 1×5 bars are the pieces that end runs. Always leave space for them.</p></div>
+      <div class="card"><h3>Build along the edges</h3><p>Fill from the walls inward. Pieces placed in the middle split the board into awkward pockets.</p></div>
+      <div class="card"><h3>Use Hold early</h3><p>Park the big piece in HOLD while the board is open, and bring it back when it can finish two lines at once.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MODES -->
+<section id="modes">
+  <div class="wrap">
+    <h2>Game modes</h2>
+    <p class="lead">All modes are free to play, forever. Coins and boosters are optional helpers.</p>
+    <div class="grid g2">
+      <div class="card hot"><h3>🗺️ Adventure — 120 levels</h3>
+        <p>Six worlds: <b>Crystal Caves, Ember Ridge, Frost Hollow, Desert Mirage, Lantern Bazaar</b> and <b>Starfall Peak</b>. Each level has a goal and a move limit, and earns 1–3 stars for how quickly you finish.</p>
+        <ul><li><b>Score</b> — reach the target score</li><li><b>Lines</b> — clear a number of lines</li><li><span class="gem g" style="width:16px;height:16px"></span> <b>Gems</b> — break gems of one colour</li><li><span class="gem ice" style="width:16px;height:16px"></span> <b>Ice</b> — crack every frozen block</li></ul>
+        <p style="margin-top:8px">Out of moves? Buy +5 moves or watch a video. Every level has been played and beaten by our test solver.</p></div>
+      <div class="card"><h3>♾️ Classic</h3><p>The endless mode: play until no piece fits and chase your best score. Your game saves itself, so you can always continue later.</p></div>
+      <div class="card"><h3>📅 Daily Quake</h3><p>One puzzle a day, with the <b>same pieces for every player in the world</b>. Compare your score with friends and on the daily leaderboard.</p></div>
+      <div class="card"><h3>🏆 Weekly Event</h3><p>A new themed board every week (Crystal, Ember, Frost, Lantern, Starfall and Bloom weeks). Score as much as you can in 40 moves to win three prize tiers of coins and boosters.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ V1 -->
+<section id="v1">
+  <div class="wrap">
+    <h2>What's in Version 1 <span class="status st-next">Releasing on Google Play</span></h2>
+    <p class="lead">Version 1 is the complete first release for Android phones and tablets (Android 7.0 and newer).</p>
+    <div class="grid g3">
+      <div class="card"><h3>Play</h3><ul class="tick">
+        <li>8×8 board, 37 piece shapes</li><li>Combo streaks &amp; All Clear</li><li>Hold slot</li><li>Rainbow gems &amp; frozen blocks</li>
+        <li>Classic, Daily Quake, Adventure (120 levels), Weekly Event</li><li>Undo, Bomb, Reroll, Hint, Aftershock</li><li>How-to-play guide in the game</li></ul></div>
+      <div class="card"><h3>Progress &amp; rewards</h3><ul class="tick">
+        <li>3 Daily Missions every day</li><li>20 Trophies with coin rewards</li><li>7-day Daily Gift</li><li>Stars and world map</li>
+        <li>Google Play Games leaderboards &amp; achievements*</li><li>Cloud save + Android backup to your Google account</li></ul></div>
+      <div class="card"><h3>Look &amp; feel</h3><ul class="tick">
+        <li>8 block styles: Gems, Neon, Candy, Ember, Arabesque, Lantern, Winter, Royal</li><li>5 backgrounds incl. Garden Arches</li>
+        <li>5 combo effects: Shards, Confetti, Fireworks, Stars, Petals</li><li>Original music, sounds &amp; vibration</li>
+        <li>English, Arabic, Urdu, Spanish</li><li>Portrait &amp; landscape, phones &amp; tablets</li></ul></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card"><h3>Fair, optional shop</h3>
+        <ul><li>Coin packs from $0.99 (double coins every Friday–Sunday)</li><li>Starter Pack and Booster Bundle</li><li><b>Remove Ads</b> — $2.99 once, forever</li><li><b>Tilequake Pass</b> — $4.99/month: no ads, 250 coins and an Undo every day, Royal blocks</li></ul></div>
+      <div class="card"><h3>Gentle ads</h3>
+        <ul><li><b>No ads at all for your first 7 days</b></li><li>After that: one short ad every second game — never during play</li><li>Optional videos for free rewards</li><li>No banners. Remove Ads or the Pass turns them off</li></ul></div>
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-top:10px">* Google Play Games features switch on as soon as the game is live on Google Play.</p>
+  </div>
+</section>
+
+<!-- ============================================================ ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <h2>Roadmap</h2>
+    <p class="lead">Tilequake keeps growing. Here is what we are building next — dates are targets and may move as we listen to players.</p>
+    <div class="timeline">
+      <div class="milestone now"><div class="when">Late November 2026</div><h3>Version 1.0 — Launch <span class="status st-next">Next</span></h3>
+        <ul class="tick"><li>Everything listed above, on Google Play in every country</li></ul></div>
+
+      <div class="milestone"><div class="when">December 2026</div><h3>Version 1.1 — Polish &amp; Winter <span class="status st-plan">Planned</span></h3>
+        <ul class="soon"><li>Fixes and balance from player feedback</li><li>Winter Festival event with a limited snowfall board</li><li>Share your Daily Quake score as an image</li><li>Remember the last style you used per mode</li></ul></div>
+
+      <div class="milestone"><div class="when">January – February 2027</div><h3>Version 2 — More worlds &amp; Seasons <span class="status st-plan">Planned</span></h3>
+        <ul class="soon"><li>Adventure levels 121–240 with two new worlds (Coral Depths, Moonlit Oasis)</li>
+          <li>New blocks: chained blocks, stone blocks that need a Bomb, colour-shifting gems</li>
+          <li>Season Track: free and Pass reward paths that refresh every month</li>
+          <li>Seasonal events (Ramadan Lantern Nights, Spring Bloom) with exclusive styles</li>
+          <li>Album: collect gem cards from levels and events</li><li>More languages: French, Turkish, Indonesian, Malay, Bengali</li></ul></div>
+
+      <div class="milestone"><div class="when">March – April 2027</div><h3>Version 3 — Play together <span class="status st-plan">Planned</span></h3>
+        <ul class="soon"><li>Weekly Leagues: 30 players, climb from Bronze to Diamond</li>
+          <li>Duel mode: race a friend on the same pieces, live or turn-based</li>
+          <li>Friends list and friend leaderboards</li><li>Teams: chat-free team goals with shared rewards</li>
+          <li>Level editor and shared player-made puzzles (moderated)</li></ul></div>
+
+      <div class="milestone"><div class="when">May – June 2027</div><h3>Version 4 — iPhone &amp; iPad <span class="status st-plan">Planned</span></h3>
+        <ul class="soon"><li>Tilequake on the App Store (see the iPhone plan below)</li><li>Game Center leaderboards and achievements</li>
+          <li>Cross-progress between Android and iPhone through a BriskNest account (optional)</li></ul></div>
+
+      <div class="milestone"><div class="when">Later in 2027</div><h3>Beyond <span class="status st-plan">Ideas</span></h3>
+        <ul class="soon"><li>Wonder Squad Blocks — a kids' edition with no ads and a parent gate</li><li>Tablet-sized 10×10 board mode</li>
+          <li>Accessibility: colour-blind gem patterns, larger pieces, one-hand mode</li><li>Web demo on games.brisknest.us</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ROLLOUT -->
+<section id="rollout">
+  <div class="wrap">
+    <h2>Rollout plan</h2>
+    <p class="lead">How Version 1 goes from the build machine to players' phones, and how we decide each next step.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Phase</th><th>When</th><th>What happens</th><th>Go / no-go check</th></tr>
+        <tr><td><b>0. Build &amp; test</b> <span class="status st-done">Done</span></td><td>Nov 15–16, 2026</td><td>Native Android build, automatic tests: 200 robot games, all 120 levels beaten by the solver, save and purchase checks. Signed release ready. Ads set up.</td><td>All tests green</td></tr>
+        <tr><td><b>1. Internal test</b></td><td>Days 1–3</td><td>Install on our own phones and tablets (old and new, portrait and landscape, Arabic and Urdu). Test real purchases with Play test cards and test ads.</td><td>No crashes, purchases deliver once, ads respect the 7-day rule</td></tr>
+        <tr><td><b>2. Store setup</b></td><td>Days 1–3</td><td>Play Console app, store listing, content rating, data safety, 9 products + the Pass subscription, Play Games leaderboards &amp; achievements.</td><td>All Play Console sections complete</td></tr>
+        <tr><td><b>3. Review</b></td><td>Days 3–10</td><td>Send to Google for review with managed publishing off.</td><td>Approved</td></tr>
+        <tr><td><b>4. Staged release</b></td><td>Week 2</td><td>Production rollout 20% → 50% → 100% of players over about a week.</td><td>Crash-free users ≥ 99.5%, ANR &lt; 0.3%, rating ≥ 4.3</td></tr>
+        <tr><td><b>5. Launch push</b></td><td>Weeks 2–4</td><td>Shorts on the BriskNest YouTube channels, hazhar.com and games.brisknest.us page, store listing A/B tests on icon and screenshots.</td><td>Day-1 retention ≥ 35%, day-7 ≥ 12%</td></tr>
+        <tr><td><b>6. Live game</b></td><td>Every week</td><td>New Weekly Event, monthly update with fixes and balance, reply to every store review.</td><td>Ratings and retention trend up</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ APPLE -->
+<section id="apple">
+  <div class="wrap">
+    <h2>Plan for iPhone &amp; iPad</h2>
+    <p class="lead">Tilequake's game rules already live in a separate, platform-free "core", so the iPhone version shares the same levels, scoring and saves. Target: <b>Version 4, May–June 2027</b>.</p>
+    <div class="grid g2">
+      <div class="card"><h3>1. Accounts &amp; setup (Jan 2027)</h3><ul>
+        <li>Join the Apple Developer Program ($99 a year) as BriskNest US LLC — needs the company's D-U-N-S number (free, takes up to 2 weeks). Until then we can enrol as an individual.</li>
+        <li>App Store Connect app: "Tilequake: Block Puzzle", bundle id <code>com.brisknest.tilequake</code>.</li>
+        <li>A Mac for building: a Mac mini, or macOS build machines on GitHub Actions (they use 10× the minutes, so a Mac mini is cheaper long-term).</li></ul></div>
+      <div class="card"><h3>2. Technology (Feb–Apr 2027)</h3><ul>
+        <li>Convert the game core from Java to <b>Kotlin Multiplatform</b>, so one shared code base runs on Android and iPhone.</li>
+        <li>iPhone screen layer in Swift drawing with Apple's graphics (the game only needs ~15 drawing commands).</li>
+        <li><b>StoreKit 2</b> for coin packs, Remove Ads and the Pass; <b>Game Center</b> for leaderboards and achievements; <b>iCloud</b> for saves.</li>
+        <li>Google AdMob for iOS with Apple's tracking-permission prompt (App Tracking Transparency).</li></ul></div>
+      <div class="card"><h3>3. Apple's rules we design for</h3><ul>
+        <li>Privacy "nutrition label" and the in-app account-free design.</li><li>A visible <b>Restore Purchases</b> button (already in Settings).</li>
+        <li>Clear subscription terms on the Pass screen.</li><li>Support for every iPhone and iPad size, Dynamic Island and landscape.</li></ul></div>
+      <div class="card"><h3>4. Launch (May–Jun 2027)</h3><ul>
+        <li>TestFlight beta with friends and family (2–3 weeks).</li><li>App Store review (usually 1–3 days).</li>
+        <li>Phased release over 7 days, the same health checks as Android.</li><li>Optional cross-progress with Android through a BriskNest account.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <details><summary>Is Tilequake free?</summary><p>Yes. Every mode and every level can be played for free. Coins, boosters, styles, Remove Ads and the Pass are optional.</p></details>
+    <details><summary>Does it work offline?</summary><p>Yes. You can play every mode without internet. Leaderboards, cloud save and videos need a connection.</p></details>
+    <details><summary>Will I lose my progress on a new phone?</summary><p>No. Your progress is backed up to your Google account, and with Google Play Games it is also saved to the cloud and merged automatically.</p></details>
+    <details><summary>How do I remove ads?</summary><p>There are no ads in your first 7 days. After that you can buy Remove Ads once ($2.99) or join the Tilequake Pass. Both also restore on your other Android phones.</p></details>
+    <details><summary>Which languages are supported?</summary><p>English, Arabic, Urdu and Spanish. Tilequake follows your phone's language; you can change it in Settings.</p></details>
+    <details><summary>Is it suitable for children?</summary><p>Tilequake is made for players 13 and older. A kids' edition without ads (Wonder Squad Blocks) is on the roadmap.</p></details>
+    <details><summary>I found a bug or have an idea.</summary><p>Write to <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a> — we read every message.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Hassan Azhar · BriskNest · Tilequake is an original game.</div>
+    <div><a href="https://hazhar463.github.io/tilequake/privacy.html">Privacy policy</a> · <a href="https://www.hazhar.com">hazhar.com</a> · <a href="mailto:hassan.azhar@brisknest.us">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>
