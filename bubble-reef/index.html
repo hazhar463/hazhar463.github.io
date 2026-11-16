@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bubble Reef Rescue — How to Play</title>
+<meta name="description" content="How to play Bubble Reef Rescue: aim, bounce and pop bubbles to free sea friends across 600 ocean levels. Tips, special bubbles, boosters, Reef Streak, and what's coming next.">
+<meta property="og:title" content="Bubble Reef Rescue — How to Play">
+<meta property="og:description" content="Pop bubbles, free sea friends, explore 600 ocean levels. Free to play, works offline, no lives.">
+<meta property="og:image" content="img/feature.webp">
+<link rel="icon" href="img/icon.webp">
+<style>
+:root{
+  --deep:#062447; --sea:#0b5e8c; --aqua:#3fd7e6; --foam:#d8f6ff; --sun:#ffec96; --coin:#ffc14d;
+  --coral:#ff6b6b; --purple:#7c4ddb; --green:#32d27a; --card:rgba(255,255,255,.08); --line:rgba(255,255,255,.16);
+  --text:#f2fbff; --muted:#a9cde0; --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Nunito","Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);
+  background:linear-gradient(180deg,#0a4c7a 0%,#073865 30%,#062447 70%,#031428 100%);line-height:1.55}
+a{color:var(--aqua)}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Baloo 2","Poppins","Nunito",system-ui,sans-serif;line-height:1.15;margin:0 0 .4em}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--sun);text-shadow:0 3px 0 rgba(0,0,0,.35)}
+h3{font-size:1.2rem}
+p{margin:.3em 0 .8em}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* top nav */
+nav.top{position:sticky;top:0;z-index:20;background:rgba(6,36,71,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:14px;height:58px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.top .brand{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--text);text-decoration:none;margin-right:12px;flex:0 0 auto}
+nav.top a.l{flex:0 0 auto}
+@media (max-width:540px){nav.top .brand span{display:none}}
+nav.top .brand img{width:30px;height:30px;border-radius:8px}
+nav.top a.l{color:var(--foam);text-decoration:none;font-weight:700;font-size:.92rem;padding:6px 10px;border-radius:999px}
+nav.top a.l:hover{background:rgba(255,255,255,.1)}
+
+/* hero */
+header.hero{position:relative;overflow:hidden;padding:56px 0 40px}
+header.hero::before{content:"";position:absolute;inset:0;background:url(img/bg.webp) center/cover;opacity:.35}
+header.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);color:var(--sun);text-shadow:0 4px 0 #0b3a66,0 8px 24px rgba(0,0,0,.4)}
+.hero .tag{font-size:1.2rem;font-weight:700;color:var(--foam)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.pill{background:rgba(255,255,255,.12);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;font-size:.9rem}
+.btn{display:inline-block;background:linear-gradient(180deg,#4fe08f,#1ea85a);color:#04210f;font-weight:900;text-decoration:none;
+  padding:14px 22px;border-radius:999px;box-shadow:0 5px 0 #127a3f;margin:6px 8px 6px 0}
+.btn.alt{background:linear-gradient(180deg,#5fc8ff,#1453b5);color:#fff;box-shadow:0 5px 0 #0c3a80}
+.hero .otto{width:min(360px,80%);margin:0 auto;filter:drop-shadow(0 16px 24px rgba(0,0,0,.45));animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px)}}
+
+section{padding:46px 0;border-top:1px solid rgba(255,255,255,.06)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card h3{color:var(--sun)}
+.step{display:flex;gap:14px;align-items:flex-start}
+.num{flex:0 0 42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#ffd45c,#e07a00);color:#3a1d00;font-weight:900;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 3px 0 #9b5300}
+
+/* CSS bubbles */
+.bub{width:54px;height:54px;border-radius:50%;flex:0 0 54px;position:relative;display:flex;align-items:center;justify-content:center;font-size:24px;
+  box-shadow:inset -6px -8px 12px rgba(0,0,0,.25),inset 6px 6px 10px rgba(255,255,255,.35),0 4px 8px rgba(0,0,0,.3)}
+.bub::after{content:"";position:absolute;width:30%;height:22%;left:20%;top:16%;border-radius:50%;background:rgba(255,255,255,.75);transform:rotate(-30deg)}
+.b-red{background:#ff5a6e}.b-blue{background:#3b8cff}.b-green{background:#3ccf6d}.b-yellow{background:#ffd23f}.b-purple{background:#a66bff}.b-orange{background:#ff9a3c}
+.b-pearl{background:radial-gradient(circle at 40% 35%,#fff,#f0dff3 50%,#cdb6d6)}
+.b-rock{background:#6b7280;border-radius:42%}
+.b-ice{background:linear-gradient(135deg,#d6f4ff,#7cc8ef);outline:3px solid rgba(255,255,255,.6)}
+.b-mine{background:#2b2f3a}
+.b-gold{background:#ffc14d}
+.b-fire{background:radial-gradient(circle at 50% 60%,#ffe066,#ff7a1a 55%,#d6301a)}
+.b-rainbow{background:conic-gradient(#ff5a6e,#ffd23f,#3ccf6d,#3b8cff,#a66bff,#ff5a6e)}
+.b-shell{background:#e8c39e;border-radius:30% 30% 50% 50%}
+.b-jelly{background:linear-gradient(180deg,#ff8fd8,#8f6bff)}
+.special{display:flex;gap:14px;align-items:flex-start}
+.lvl{display:inline-block;font-size:.75rem;font-weight:800;color:#062447;background:var(--aqua);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+
+/* goals */
+.goal img{width:64px;height:64px;object-fit:contain}
+.goalrow{display:flex;gap:12px;align-items:center}
+
+/* creatures + bosses */
+.critters{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.critters figure{margin:0;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px}
+.critters img{width:64px;height:64px;object-fit:contain;margin:0 auto}
+.critters figcaption{font-size:.78rem;font-weight:700;color:var(--muted)}
+.bosses figure img{width:90px;height:90px}
+
+/* screenshots */
+.shots{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory}
+.shots img{width:220px;border-radius:18px;scroll-snap-align:start;border:2px solid var(--line);flex:0 0 auto}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--sun);font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
+
+/* roadmap */
+.road{position:relative;margin-left:14px;padding-left:28px;border-left:4px dashed rgba(255,255,255,.25)}
+.ver{position:relative;margin-bottom:22px}
+.ver::before{content:"";position:absolute;left:-41px;top:18px;width:22px;height:22px;border-radius:50%;background:var(--muted);border:4px solid var(--deep)}
+.ver.now::before{background:var(--green);box-shadow:0 0 0 6px rgba(50,210,122,.25)}
+.ver.next::before{background:var(--coin)}
+.ver .badge{display:inline-block;font-weight:900;font-size:.8rem;border-radius:999px;padding:3px 10px;margin-bottom:6px;color:#062447;background:var(--muted)}
+.ver.now .badge{background:var(--green)} .ver.next .badge{background:var(--coin)}
+.ver ul{margin:.3em 0 0;padding-left:1.2em}
+.ver li{margin:.15em 0}
+.cols2{columns:2;column-gap:28px}
+.cols2 li{break-inside:avoid}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800}
+footer{padding:36px 0 50px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:860px){
+  header.hero .wrap{grid-template-columns:1fr} .hero .otto{width:220px}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)} .critters{grid-template-columns:repeat(4,1fr)} .cols2{columns:1}
+}
+@media (max-width:540px){
+  .g2,.g3,.g4{grid-template-columns:1fr} .critters{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.hero .otto{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/icon.webp" alt=""><span>Bubble Reef Rescue</span></a>
+  <a class="l" href="#start">Quick start</a>
+  <a class="l" href="#play">How to play</a>
+  <a class="l" href="#bubbles">Special bubbles</a>
+  <a class="l" href="#boosters">Boosters</a>
+  <a class="l" href="#more">Daily fun</a>
+  <a class="l" href="#tips">Tips</a>
+  <a class="l" href="#roadmap">What's next</a>
+  <a class="l" href="#faq">FAQ</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Bubble Reef Rescue</h1>
+    <p class="tag">Aim, bounce and pop! Help Otto the sea otter free his friends trapped in bubbles all over the reef.</p>
+    <div class="pills">
+      <span class="pill">🐠 600 levels</span><span class="pill">🌊 24 ocean worlds</span><span class="pill">👑 Boss fights</span>
+      <span class="pill">📶 Plays offline</span><span class="pill">❤️ No lives, no waiting</span><span class="pill">🆓 Free to play</span>
+    </div>
+    <a class="btn" href="#start">How to play</a>
+    <a class="btn alt" href="#roadmap">What's coming</a>
+    <p class="small muted">Coming soon to Google Play for Android phones and tablets. iPhone and iPad are planned next.</p>
+  </div>
+  <img class="otto" src="img/otto_wave.webp" alt="Otto the sea otter waving">
+</div></header>
+
+<section id="start"><div class="wrap">
+  <h2>Quick start</h2>
+  <div class="grid g3">
+    <div class="card step"><div class="num">1</div><div><h3>Drag to aim</h3><p>Put your finger on the screen and drag. A dotted guide shows where your bubble will go, bounces included.</p></div></div>
+    <div class="card step"><div class="num">2</div><div><h3>Let go to shoot</h3><p>Lift your finger to fire. Touch 3 or more bubbles of the same colour and they pop!</p></div></div>
+    <div class="card step"><div class="num">3</div><div><h3>Free the friends</h3><p>Pop or drop the bubbles holding sea friends. Reach the level goal before you run out of shots.</p></div></div>
+  </div>
+  <div class="shots" aria-label="Screenshots">
+    <img src="img/shot-1.webp" alt="Gameplay: pop bubbles and free sea friends" loading="lazy">
+    <img src="img/shot-2.webp" alt="A boss level" loading="lazy">
+    <img src="img/shot-3.webp" alt="The ocean map" loading="lazy">
+    <img src="img/shot-4.webp" alt="Reef Home aquarium" loading="lazy">
+    <img src="img/shot-5.webp" alt="Endless mode" loading="lazy">
+    <img src="img/shot-6.webp" alt="A picture puzzle level" loading="lazy">
+    <img src="img/shot-7.webp" alt="Main menu with Otto" loading="lazy">
+    <img src="img/shot-8.webp" alt="Daily gift" loading="lazy">
+  </div>
+</div></section>
+
+<section id="play"><div class="wrap">
+  <h2>How to play</h2>
+  <div class="grid g2">
+    <div class="card"><h3>🎯 Aiming and shooting</h3>
+      <p>Drag anywhere to aim, then let go to shoot. The guide line shows the path. Aim at a side wall and the bubble <b>bounces</b>, which is how you reach bubbles hiding behind others.</p>
+      <p>Your <b>next bubble</b> waits beside Otto. <b>Tap Otto</b> (or the next bubble) to swap them.</p></div>
+    <div class="card"><h3>💥 Popping and dropping</h3>
+      <p>Join <b>3 or more</b> bubbles of one colour to pop them. Any bubbles left hanging with nothing holding them up <b>fall off the reef</b>. Drops score more than pops, and falling friends are freed too.</p>
+      <p>The biggest shots cut a reef off near the top so a whole branch tumbles down.</p></div>
+    <div class="card"><h3>🔢 Shots</h3>
+      <p>Each level gives you a set number of shots (shown at the bottom). The counter turns red when 5 are left. Run out before the goal is done and you can try again, or keep going with <b>+5 shots</b> for coins or a short optional video.</p></div>
+    <div class="card"><h3>⭐ Stars</h3>
+      <p>Win with shots to spare for more stars: about a quarter of your shots left earns <b>3 stars</b>, about a tenth earns <b>2 stars</b>, and any win earns <b>1 star</b>. A level won after buying extra shots gives 1 star. Replay any level to improve.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px;color:var(--sun)">Level goals</h3>
+  <div class="grid g3">
+    <div class="card goal"><div class="goalrow"><img src="img/creature_00.webp" alt=""><div><h3>Rescue</h3><p class="small">Free the sea friends trapped in bubbles. Pop them or drop them.</p></div></div></div>
+    <div class="card goal"><div class="goalrow"><span class="bub b-pearl"></span><div><h3>Pearls</h3><p class="small">Collect the shiny pearl bubbles. Each one also gives you coins.</p></div></div></div>
+    <div class="card goal"><div class="goalrow"><span class="bub b-blue">✦</span><div><h3>Clear the reef</h3><p class="small">Remove every bubble. Every 7th level is a <b>picture puzzle</b> hidden in the reef.</p></div></div></div>
+    <div class="card goal"><div class="goalrow"><img src="img/boss_0.webp" alt=""><div><h3>Boss</h3><p class="small">Every 25th level a grumpy boss hides in a shell of bubbles. Pop every shell bubble to set it free.</p></div></div></div>
+    <div class="card goal"><div class="goalrow"><span class="bub b-purple">∞</span><div><h3>Endless</h3><p class="small">The reef keeps sliding down. Keep it from reaching Otto and chase your best score.</p></div></div></div>
+    <div class="card goal"><div class="goalrow"><span class="bub b-orange">🌊</span><div><h3>The tide</h3><p class="small">From level 65, tide levels push the reef down two rows every few shots. The chip at the top counts down.</p></div></div></div>
+  </div>
+</div></section>
+
+<section id="bubbles"><div class="wrap">
+  <h2>Special bubbles</h2>
+  <p class="muted">New bubbles arrive as you dive deeper. The first time you meet one, the game shows a short card explaining it.</p>
+  <div class="grid g2">
+    <div class="card special"><span class="bub b-mine">💣</span><div><h3>Sea mine <span class="lvl">Level 8</span></h3><p>Pop a bubble next to a mine and it blows up everything around it.</p></div></div>
+    <div class="card special"><span class="bub b-yellow">⚡</span><div><h3>Lightning <span class="lvl">Level 12</span></h3><p>Pop a lightning bubble and its whole row disappears.</p></div></div>
+    <div class="card special"><span class="bub b-rock"></span><div><h3>Rock <span class="lvl">Level 16</span></h3><p>Rocks can't be popped. Knock out the bubbles holding them up and they fall. Fire Bubbles burn straight through them.</p></div></div>
+    <div class="card special"><span class="bub b-ice">❄</span><div><h3>Ice <span class="lvl">Level 26</span></h3><p>Frozen bubbles need two matches: the first cracks the ice, the second pops them.</p></div></div>
+    <div class="card special"><span class="bub b-green">🔗</span><div><h3>Chains <span class="lvl">Level 35</span></h3><p>Chained bubbles pop together. Break one link and the whole chain goes.</p></div></div>
+    <div class="card special"><span class="bub b-jelly"></span><div><h3>Jellyfish <span class="lvl">Level 45</span></h3><p>They change colour after every shot. Wait for the colour you need.</p></div></div>
+    <div class="card special"><span class="bub b-shell">🐚</span><div><h3>Clam <span class="lvl">Level 55</span></h3><p>Clams open and close every two shots. You can only match them while they're open.</p></div></div>
+    <div class="card special"><span class="bub b-pearl"></span><div><h3>Pearl</h3><p>The target on Pearl levels, and worth coins on any level.</p></div></div>
+  </div>
+</div></section>
+
+<section id="boosters"><div class="wrap">
+  <h2>Boosters and helpers</h2>
+  <div class="grid g2">
+    <div class="card special"><span class="bub b-fire"></span><div><h3>Fire Bubble</h3><p>Burns in a straight line through up to 14 bubbles, rocks and ice included. Great for cutting a reef in half.</p></div></div>
+    <div class="card special"><span class="bub b-rainbow"></span><div><h3>Rainbow Bubble</h3><p>Matches every colour it touches. Perfect for a spot where colours meet.</p></div></div>
+    <div class="card special"><span class="bub b-green">+5</span><div><h3>+5 Shots</h3><p>Pick it on the level start card to begin with five extra shots.</p></div></div>
+    <div class="card special"><span class="bub b-blue">📡</span><div><h3>Sonar Aim</h3><p>Shows the full bounce path and exactly where the bubble lands, for a whole level.</p></div></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h3>🦦 Otto's Bloop meter</h3><p>Every good shot fills Otto's meter. Six in a row and he hands you a <b>free Rainbow Bubble</b>. A miss drains it a little.</p></div>
+    <div class="card"><h3>🔥 Reef Streak <span class="lvl">New</span></h3><p>Win levels in a row to start the next one with free bubbles: 1 win → a Fire Bubble, 2 wins → a Rainbow Bubble, 3+ wins → both. Lose a level and the streak starts again.</p></div>
+    <div class="card"><h3>💜 Hard levels <span class="lvl">New</span></h3><p>About one level in ten is marked <b>HARD</b> (fewer shots, double coins) and one in fifty is <b>SUPER HARD</b> (triple coins). They're always winnable.</p></div>
+  </div>
+  <table class="card" style="margin-top:16px;padding:0">
+    <tr><th>Booster</th><th>Shop price</th><th>Other ways to get it</th></tr>
+    <tr><td>Fire Bubble</td><td>900 coins</td><td>Reef Streak, star chests, day 7 gift, Starter Pack, Booster Bundle</td></tr>
+    <tr><td>Rainbow Bubble</td><td>700 coins</td><td>Bloop meter, Reef Streak, star chests, day 7 gift</td></tr>
+    <tr><td>+5 Shots</td><td>500 coins</td><td>Star chests</td></tr>
+    <tr><td>Sonar Aim</td><td>350 coins</td><td>Star chests</td></tr>
+  </table>
+</div></section>
+
+<section id="worlds"><div class="wrap">
+  <h2>600 levels, 24 worlds</h2>
+  <p>The map runs through six parts of the ocean, 25 levels each: <b>Sunny Shallows, Coral Garden, Kelp Forest, Shipwreck Cove, Glowing Grotto</b> and the <b>Midnight Trench</b>. After level 150 you dive through them again with new light (II at dusk, III in emerald water, IV by ember glow), with bigger reefs and more surprises, all the way to level 600.</p>
+  <h3 style="color:var(--sun)">The bosses</h3>
+  <div class="critters bosses">
+    <figure><img src="img/boss_0.webp" alt=""><figcaption>Grumpy Crab</figcaption></figure>
+    <figure><img src="img/boss_1.webp" alt=""><figcaption>Captain Octo</figcaption></figure>
+    <figure><img src="img/boss_2.webp" alt=""><figcaption>Puffer King</figcaption></figure>
+    <figure><img src="img/boss_3.webp" alt=""><figcaption>Grandpa Turtle</figcaption></figure>
+    <figure><img src="img/boss_4.webp" alt=""><figcaption>Glow Queen Jelly</figcaption></figure>
+    <figure><img src="img/boss_5.webp" alt=""><figcaption>Old Whale Bo</figcaption></figure>
+  </div>
+  <h3 style="color:var(--sun);margin-top:22px">Sea friends to rescue</h3>
+  <p class="small muted">New friends appear as you go deeper. Every one you free goes into your Reef Collection.</p>
+  <div class="critters">
+    <figure><img src="img/creature_00.webp" alt=""><figcaption>Clownfish</figcaption></figure>
+    <figure><img src="img/creature_01.webp" alt=""><figcaption>Sea Turtle</figcaption></figure>
+    <figure><img src="img/creature_02.webp" alt=""><figcaption>Seahorse</figcaption></figure>
+    <figure><img src="img/creature_03.webp" alt=""><figcaption>Hermit Crab</figcaption></figure>
+    <figure><img src="img/creature_04.webp" alt=""><figcaption>Starfish</figcaption></figure>
+    <figure><img src="img/creature_05.webp" alt=""><figcaption>Pufferfish</figcaption></figure>
+    <figure><img src="img/creature_06.webp" alt=""><figcaption>Jellyfish</figcaption></figure>
+    <figure><img src="img/creature_07.webp" alt=""><figcaption>Octopus</figcaption></figure>
+    <figure><img src="img/creature_08.webp" alt=""><figcaption>Angelfish</figcaption></figure>
+    <figure><img src="img/creature_09.webp" alt=""><figcaption>Baby Whale</figcaption></figure>
+    <figure><img src="img/creature_10.webp" alt=""><figcaption>Narwhal</figcaption></figure>
+    <figure><img src="img/creature_11.webp" alt=""><figcaption>Manta Ray</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="more"><div class="wrap">
+  <h2>Every day there's more</h2>
+  <div class="grid g3">
+    <div class="card"><h3>🎁 Daily Gift</h3><p>Open the game each day for coins: 100, 150, 200, 250, 300, 400, then 600 coins plus a Fire and a Rainbow Bubble on day 7. Miss a day and it starts again at day 1.</p></div>
+    <div class="card"><h3>📅 Daily Challenge</h3><p>A new level every day, the same for every player. Win it for 300 bonus coins and a spot on the daily leaderboard.</p></div>
+    <div class="card"><h3>🗓 Weekly events</h3><p>Each week brings a bonus: <b>Pearl Week</b> (double pearl coins), <b>Rescue Rush</b> (+50% on rescue and boss wins), <b>Boom Week</b> (10 coins per mine) or <b>Gold Tide</b> (+25% on every win).</p></div>
+    <div class="card"><h3>🧰 Star chests</h3><p>Every 10 stars you earn opens a treasure chest with coins and boosters.</p></div>
+    <div class="card"><h3>🏠 Reef Home</h3><p>The friends you rescue move into your own aquarium. Buy decorations like coral, kelp, a sandcastle and a treasure chest to make it yours.</p></div>
+    <div class="card"><h3>🎩 Dress up Otto</h3><p>Captain hat, snorkel, flower, pirate hat or crown. Change the bubbles too with Pearl, Candy and Glow skins.</p></div>
+    <div class="card"><h3>♾ Endless mode</h3><p>No goal, no shot limit: just you against the sliding reef. Beat your best and climb the Endless leaderboard.</p></div>
+    <div class="card"><h3>🏆 Achievements</h3><p>20 achievements, from your first rescue to finishing all 600 levels. Sign in with Google Play Games to back them up.</p></div>
+    <div class="card"><h3>☁️ Cloud save</h3><p>Sign in with Google Play Games and your progress follows you to a new phone. Without signing in, everything is still saved on your phone.</p></div>
+  </div>
+</div></section>
+
+<section id="tips"><div class="wrap">
+  <h2>Tips from Otto</h2>
+  <div class="grid g2">
+    <div class="card"><ul>
+      <li><b>Drop beats pop.</b> Aim for the bubbles that hold up big branches; everything underneath falls and scores more.</li>
+      <li><b>Use the walls.</b> A bounce can sneak a bubble into a gap you can't reach straight on.</li>
+      <li><b>Swap before you shoot.</b> If the colour in the shooter is no use, tap Otto to use the next one instead.</li>
+      <li><b>Save the Fire Bubble</b> for rocks, ice and thick reefs, and the Rainbow Bubble for spots where several colours meet.</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li><b>Keep shots spare</b> for 3 stars: finish with about a quarter of your shots left.</li>
+      <li><b>Watch the jellyfish</b> and clams: wait a shot or two for the right colour or an open clam.</li>
+      <li><b>Protect your streak.</b> Use your free streak bubbles early on hard levels.</li>
+      <li><b>Stuck?</b> Replay an earlier level for stars (they open chests) or try Endless mode for coins.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="fair"><div class="wrap">
+  <h2>Fair play promise</h2>
+  <div class="grid g3">
+    <div class="card"><h3>🆓 Free to play</h3><p>Every level can be won without paying. Coin packs and boosters are optional.</p></div>
+    <div class="card"><h3>❤️ No lives</h3><p>Play as many levels as you like, whenever you like. No waiting timers.</p></div>
+    <div class="card"><h3>📶 Works offline</h3><p>Play anywhere, on a plane or underground. Ads and cloud save simply wait until you're back online.</p></div>
+    <div class="card"><h3>📺 Gentle ads</h3><p>No ads at all in your first 7 days. After that, at most one short ad every few levels, never during play. Ads stay silent when you turn the game's sound off.</p></div>
+    <div class="card"><h3>🚫 Remove Ads</h3><p>One payment removes every automatic ad forever, on every phone with your Google account. Bonus videos (free coins, double coins) only play when you tap them.</p></div>
+    <div class="card"><h3>🔒 Privacy</h3><p>We keep your progress on your phone and, if you sign in, in Google Play Games. Read the <a href="privacy.html">privacy policy</a>.</p></div>
+  </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <h2>What's in version 1, and what's coming</h2>
+  <p class="muted">Plans can change as we listen to players. Dates are targets, not promises.</p>
+  <div class="road">
+    <div class="ver now"><span class="badge">VERSION 1.0 · LAUNCH · ANDROID</span>
+      <h3>Everything you read on this page</h3>
+      <ul class="cols2">
+        <li>600 levels in 24 ocean worlds</li>
+        <li>Rescue, Pearl, Clear, Picture and Boss levels</li>
+        <li>24 boss levels with 6 bosses</li>
+        <li>Endless mode with the sliding reef</li>
+        <li>Mines, lightning, rocks, ice, chains, jellyfish, clams, tide</li>
+        <li>Fire, Rainbow, +5 Shots and Sonar boosters</li>
+        <li>Otto's Bloop meter</li>
+        <li>Reef Streak and Hard / Super Hard levels</li>
+        <li>Guided first levels and a card for every new bubble</li>
+        <li>Daily Gift, Daily Challenge, weekly events, star chests</li>
+        <li>Reef Collection and Reef Home aquarium</li>
+        <li>Otto outfits and bubble skins</li>
+        <li>20 achievements, daily / weekly / endless leaderboards</li>
+        <li>Google Play Games cloud save</li>
+        <li>Portrait and landscape, phones and tablets</li>
+        <li>Colour-blind symbols, left-handed layout, reduce motion</li>
+        <li>Plays offline, no lives, free to play</li>
+        <li>Remove Ads, no ads in the first 7 days</li>
+      </ul></div>
+    <div class="ver next"><span class="badge">VERSION 1.1 · ABOUT 4–6 WEEKS AFTER LAUNCH</span>
+      <h3>Rewards that grow with you</h3>
+      <ul>
+        <li><b>Reef Pass:</b> a monthly 30-step reward track filled by the stars you earn, with a free row and an optional premium row.</li>
+        <li><b>Pearl Jar:</b> every win drops pearls in a jar; break it open when it's full.</li>
+        <li><b>Reef Album:</b> collect sticker sets of sea friends from wins and chests; finish a set for boosters.</li>
+        <li>Fixes and balance changes from your feedback.</li>
+      </ul></div>
+    <div class="ver"><span class="badge">VERSION 2.0 · IPHONE AND IPAD</span>
+      <h3>Bubble Reef Rescue on Apple devices, plus a new ocean</h3>
+      <ul>
+        <li>The full game on <b>iPhone and iPad</b>, with Game Center achievements and leaderboards.</li>
+        <li>150 more levels (750 total) in a brand-new area, plus new sea friends and a new boss.</li>
+        <li>New special bubbles: whirlpools that pull bubbles around, and puffers that grow each shot.</li>
+        <li>Seasonal events with themed reefs and rewards.</li>
+        <li>More languages: Spanish, Portuguese, French, German, Arabic, Hindi and Indonesian.</li>
+      </ul></div>
+    <div class="ver"><span class="badge">VERSION 3.0 · PLAY TOGETHER</span>
+      <h3>Friends and teams</h3>
+      <ul>
+        <li><b>Reef Clubs:</b> join a team, chat with quick stickers and share extra shots.</li>
+        <li>Team events where everyone's rescues fill a shared goal.</li>
+        <li>Friend leaderboards and weekly tournaments.</li>
+        <li>One cloud save across Android and iPhone.</li>
+      </ul></div>
+    <div class="ver"><span class="badge">LATER IDEAS</span>
+      <h3>On our wish list</h3>
+      <ul>
+        <li>A level maker to build and share your own reefs.</li>
+        <li>Head-to-head challenges against a friend's best score.</li>
+        <li>Big-screen play on Chromebooks and Android TV.</li>
+      </ul></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Do I need the internet to play?</summary><p>No. The whole game works offline. You only need a connection for cloud save, leaderboards, optional videos and purchases.</p></details>
+  <details><summary>I'm stuck on a level. What can I do?</summary><p>Use a booster, keep going with +5 shots, or replay earlier levels for stars and chest rewards. Your Reef Streak also gives free bubbles after a few wins.</p></details>
+  <details><summary>How do I move my progress to a new phone?</summary><p>Open Settings and sign in with Google Play Games on the old phone, then sign in with the same account on the new one. Progress from both phones is combined, so you never lose stars.</p></details>
+  <details><summary>I bought Remove Ads. Why can I still see a video?</summary><p>Remove Ads stops every ad that plays on its own. The only videos left are the optional ones you choose to watch for a reward, like "Double your coins".</p></details>
+  <details><summary>A purchase didn't arrive.</summary><p>Close and reopen the game while online. Purchases are checked again at every start and delivered once Google Play confirms them. Pending payments arrive when they clear.</p></details>
+  <details><summary>Is it coming to iPhone?</summary><p>Yes, that's the plan for version 2.0. Watch this page for news.</p></details>
+  <details><summary>How do I contact you?</summary><p>Email <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a>. We read every message and love ideas for new levels.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>Bubble Reef Rescue</b> · a BriskNest US LLC game · <a href="privacy.html">Privacy policy</a> · <a href="../">More BriskNest games</a></p>
+  <p class="small">Google Play and the Google Play logo are trademarks of Google LLC. Apple, iPhone and iPad are trademarks of Apple Inc.</p>
+</div></footer>
+</body>
+</html>
