@@ -105,6 +105,28 @@ details{background:rgba(0,0,0,.18);border:1px solid rgba(110,95,214,.45);border-
 summary{cursor:pointer;font-weight:700;color:#fff}
 details p{color:var(--soft);margin:8px 0 0}
 
+/* feature rows with pictures */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin:26px 0}
+.split.rev > .pics{order:-1}
+.pics{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.shot{margin:0;flex:0 0 auto;width:min(230px,42vw)}
+.shot.wide{width:min(520px,100%)}
+.shot.tab{width:min(300px,60vw)}
+.pics.three{gap:12px}
+.pics.three .shot{width:min(150px,26vw)}
+.shot img{border-radius:22px;border:3px solid #3d2e8f;box-shadow:0 18px 40px rgba(0,0,0,.45);width:100%;height:auto}
+.shot figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+.worlds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.world{border-radius:var(--r);padding:18px;background:rgba(0,0,0,.2);border:1px solid rgba(110,95,214,.45);border-top:6px solid var(--wc)}
+.world .lv{font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--wc);text-transform:uppercase}
+.world h3{margin:2px 0 6px;font-size:20px;color:#fff}
+.world p{margin:0;color:var(--soft);font-size:15px}
+.diary li{margin-bottom:8px;color:var(--soft)}
+.diary b{color:var(--gold2)}
+.press a.btn{margin:4px 6px 4px 0}
+@media (max-width:860px){ .split{grid-template-columns:1fr} .split.rev > .pics{order:0} .worlds{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .worlds{grid-template-columns:1fr} }
+
 footer{padding:36px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid rgba(110,95,214,.3);margin-top:30px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 
@@ -127,11 +149,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
       <a href="../">All games</a>
       <a href="#how">How to play</a>
       <a href="#modes">Modes</a>
+      <a href="#worlds">Worlds</a>
       <a href="#v1">Version 1</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#rollout">Rollout</a>
       <a href="#apple">iPhone</a>
+      <a href="#shop">Shop</a>
       <a href="#faq">FAQ</a>
+      <a href="#support">Support</a>
     </div>
   </div>
 </nav>
@@ -248,6 +273,157 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
   </div>
 </section>
 
+<!-- ============================================================ WORLDS -->
+<section id="worlds">
+  <div class="wrap">
+    <h2>The six Adventure worlds</h2>
+    <p class="lead">Adventure has 120 levels, 20 in each world. Every level has one goal (score, lines, gems of one colour, or cracking ice), a move limit, and up to 3 stars. Each level was played and beaten by the game's own solver before release, so none of them are impossible.</p>
+    <div class="worlds">
+      <div class="world" style="--wc:#7f8cff"><div class="lv">Levels 1–20</div><h3>💎 Crystal Caves</h3><p>Where it all starts. Gentle boards that teach the four goals one at a time, with plenty of room to move.</p></div>
+      <div class="world" style="--wc:#ff8a4f"><div class="lv">Levels 21–40</div><h3>🔥 Ember Ridge</h3><p>Busier starting boards and rainbow gems twice as often, so big colour-clearing combos start to matter.</p></div>
+      <div class="world" style="--wc:#6fd6f4"><div class="lv">Levels 41–60</div><h3>❄️ Frost Hollow</h3><p>The ice world. Most levels ask you to crack every frozen block: the first line clear only cracks the ice, the second breaks it.</p></div>
+      <div class="world" style="--wc:#f0c860"><div class="lv">Levels 61–80</div><h3>🏜️ Desert Mirage</h3><p>A mix of every goal on fuller boards. Frozen blocks start showing up in levels that aren't about ice, too.</p></div>
+      <div class="world" style="--wc:#e078ea"><div class="lv">Levels 81–100</div><h3>🏮 Lantern Bazaar</h3><p>Tight boards and tighter move limits. Planning two lines ahead and using the Hold slot pays off here.</p></div>
+      <div class="world" style="--wc:#9a8cff"><div class="lv">Levels 101–120</div><h3>🌌 Starfall Peak</h3><p>The summit: the fullest starting boards in the game. Finishing all 120 levels earns a 1,000-coin trophy.</p></div>
+    </div>
+    <p class="lead" style="margin-top:20px">Stars: finish quickly for 3 stars, a bit slower for 2, and anywhere inside the move limit for 1. Ran out of moves? Add 5 more for 150 coins or a short video.</p>
+  </div>
+</section>
+
+<!-- ============================================================ LEARN / ACCESSIBILITY -->
+<section id="learn">
+  <div class="wrap">
+    <h2>Easy to learn, made for everyone</h2>
+    <div class="split">
+      <div>
+        <h3 style="font-size:24px;margin:0 0 8px">A one-minute guided tutorial</h3>
+        <p class="lead" style="margin-bottom:10px">The first time you tap Play, four short lessons show you what to do with a glowing target and a moving hand: fill a row, fill a column, park a piece in the Hold slot, then use it to clear two lines at once. Already know block puzzles? Tap <b>Skip</b>. You can replay it any time from <b>Settings › How to play</b>.</p>
+        <h3 style="font-size:24px;margin:22px 0 8px">Colour-blind mode</h3>
+        <p class="lead" style="margin-bottom:10px">Turn on <b>Symbols</b> in Settings and every gem colour also gets its own shape (● ▲ ■ ◆ ★ ✚ ⬢), so you never need to tell red from green to plan a move. It works with every block style.</p>
+      </div>
+      <div class="pics">
+        <figure class="shot"><img src="img/tutorial.webp" alt="Tutorial lesson with a glowing target row and a hand showing where to drag" loading="lazy" width="480" height="1040"><figcaption>Guided tutorial</figcaption></figure>
+        <figure class="shot"><img src="img/symbols.webp" alt="Board with symbols drawn on every gem for colour-blind players" loading="lazy" width="480" height="1040"><figcaption>Colour-blind symbols</figcaption></figure>
+      </div>
+    </div>
+    <div class="split rev">
+      <div>
+        <h3 style="font-size:24px;margin:0 0 8px">Four languages, right-to-left included</h3>
+        <p class="lead" style="margin-bottom:10px">Tilequake is fully translated into <b>English, Arabic (العربية), Urdu (اردو) and Spanish (Español)</b>. Arabic and Urdu screens read right to left. The game follows your phone's language, and you can switch in Settings › Language.</p>
+        <h3 style="font-size:24px;margin:22px 0 8px">Stuck? Ask for a hint</h3>
+        <p class="lead" style="margin-bottom:10px">You get 5 free hints every day. If you haven't moved for 10 seconds, the best spot for a piece gently glows on its own.</p>
+      </div>
+      <div class="pics three">
+        <figure class="shot"><img src="img/lang-ar.webp" alt="Tilequake in Arabic" loading="lazy" width="480" height="853"><figcaption>العربية</figcaption></figure>
+        <figure class="shot"><img src="img/lang-ur.webp" alt="Tilequake in Urdu" loading="lazy" width="480" height="853"><figcaption>اردو</figcaption></figure>
+        <figure class="shot"><img src="img/hint.webp" alt="A hint glowing on the board" loading="lazy" width="480" height="1040"><figcaption>Hint glow</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROGRESS -->
+<section id="progress">
+  <div class="wrap">
+    <h2>Missions, trophies &amp; rewards</h2>
+    <div class="split">
+      <div>
+        <p class="lead">There's always something to aim for, and every reward comes from playing.</p>
+        <div class="grid g2">
+          <div class="card"><h3>📋 Daily Missions</h3><p>Three new missions every day, such as clearing lines, building streaks or finishing levels. They pay 100, 150 and 200 coins. Finish all three for a free Bomb and Undo.</p></div>
+          <div class="card"><h3>🎁 Daily Gift</h3><p>A 7-day gift calendar that grows from 50 coins to 400 coins and a Bomb on day 7.</p></div>
+          <div class="card"><h3>🏆 20 Trophies</h3><p>From your first cracked line to all 120 levels. Each pays coins and also unlocks a Google Play Games achievement.</p></div>
+          <div class="card"><h3>📈 Leaderboards</h3><p>Four Google Play Games leaderboards: Classic best, Daily Quake, total stars and the Weekly Event.</p></div>
+        </div>
+      </div>
+      <div class="pics">
+        <figure class="shot"><img src="img/win.webp" alt="Level complete with three stars and coins" loading="lazy" width="480" height="1040"><figcaption>Level complete</figcaption></figure>
+        <figure class="shot"><img src="img/trophies.webp" alt="Trophy list" loading="lazy" width="480" height="1040"><figcaption>Trophies</figcaption></figure>
+      </div>
+    </div>
+    <h3 style="margin:30px 0 12px;font-size:24px">All 20 trophies</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Trophy goal</th><th>Coins</th></tr>
+      <tr><td>Clear your first line</td><td>50</td></tr>
+      <tr><td>Clear 100 lines</td><td>100</td></tr>
+      <tr><td>Clear 1,000 lines</td><td>300</td></tr>
+      <tr><td>Score 1,000 in one game</td><td>50</td></tr>
+      <tr><td>Score 5,000 in one game</td><td>150</td></tr>
+      <tr><td>Score 20,000 in one game</td><td>400</td></tr>
+      <tr><td>Reach a ×5 combo streak</td><td>100</td></tr>
+      <tr><td>Reach a ×10 combo streak</td><td>250</td></tr>
+      <tr><td>Clear 3 lines with one piece</td><td>100</td></tr>
+      <tr><td>Clear 5 lines with one piece</td><td>250</td></tr>
+      <tr><td>Empty the whole board</td><td>200</td></tr>
+      <tr><td>Break 10 rainbow gems</td><td>150</td></tr>
+      <tr><td>Break 50 frozen blocks</td><td>150</td></tr>
+      <tr><td>Finish 20 Adventure levels</td><td>200</td></tr>
+      <tr><td>Finish 60 Adventure levels</td><td>400</td></tr>
+      <tr><td>Finish all 120 Adventure levels</td><td>1,000</td></tr>
+      <tr><td>Earn 150 stars</td><td>500</td></tr>
+      <tr><td>Play 7 Daily Quakes</td><td>200</td></tr>
+      <tr><td>Complete 30 Daily Missions</td><td>300</td></tr>
+      <tr><td>Play 50 games</td><td>150</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============================================================ STYLES & SHOP -->
+<section id="shop">
+  <div class="wrap">
+    <h2>Styles, shop &amp; the Pass</h2>
+    <div class="split rev">
+      <div>
+        <p class="lead">Everything in the shop can be bought with coins you earn by playing. A casual player earns about 700 coins a day, so every style is within reach in about a week. Real-money packs are only a shortcut.</p>
+        <div class="tablewrap"><table>
+          <tr><th>Style</th><th>Price</th></tr>
+          <tr><td>Gems blocks · Night Sky background · Shards effect</td><td>Free</td></tr>
+          <tr><td>Confetti effect</td><td>1,500 coins</td></tr>
+          <tr><td>Neon blocks · Stars and Petals effects</td><td>2,000 coins</td></tr>
+          <tr><td>Desert Dunes, Starfield, Deep Ocean backgrounds · Fireworks effect</td><td>2,500 coins</td></tr>
+          <tr><td>Candy blocks · Winter blocks</td><td>3,000 coins</td></tr>
+          <tr><td>Garden Arches background</td><td>3,500 coins</td></tr>
+          <tr><td>Arabesque blocks · Lantern blocks</td><td>4,000 coins</td></tr>
+          <tr><td>Ember blocks</td><td>5,000 coins</td></tr>
+          <tr><td>Royal blocks</td><td>Tilequake Pass</td></tr>
+        </table></div>
+      </div>
+      <div class="pics">
+        <figure class="shot"><img src="img/shop.webp" alt="Coin shop with packs, Remove Ads and the Tilequake Pass" loading="lazy" width="480" height="1040"><figcaption>Shop</figcaption></figure>
+      </div>
+    </div>
+    <h3 style="margin:30px 0 12px;font-size:24px">Remove Ads or the Pass?</h3>
+    <div class="tablewrap"><table>
+      <tr><th></th><th>Free</th><th>Remove Ads — $2.99 once</th><th>Tilequake Pass — $4.99 / month</th></tr>
+      <tr><td>Every mode and level</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Ads between games</td><td>None for 7 days, then one every 2nd game</td><td>Never</td><td>Never</td></tr>
+      <tr><td>Optional reward videos</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Daily bonus</td><td>—</td><td>—</td><td>250 coins + 1 Undo every day</td></tr>
+      <tr><td>Royal block style</td><td>—</td><td>—</td><td>✓</td></tr>
+      <tr><td>Lasts</td><td>—</td><td>Forever, on all your Android phones</td><td>While subscribed; cancel any time in Google Play</td></tr>
+    </table></div>
+    <p class="lead" style="margin-top:14px">Coin packs from $0.99 give double coins every Friday to Sunday. Prices are in US dollars; Google Play shows the price in your own currency.</p>
+  </div>
+</section>
+
+<!-- ============================================================ ANY SCREEN -->
+<section id="screens">
+  <div class="wrap">
+    <h2>Play on any screen</h2>
+    <p class="lead">Portrait or landscape, small phone or big tablet: the board and tray rearrange themselves to fit. Your progress is saved on your phone and backed up to your Google account, and with Google Play Games it follows you to a new device.</p>
+    <div class="pics" style="align-items:flex-start">
+      <figure class="shot wide"><img src="img/land.webp" alt="Tilequake in landscape on a phone" loading="lazy" width="900" height="415"><figcaption>Landscape</figcaption></figure>
+      <figure class="shot tab"><img src="img/tablet.webp" alt="Tilequake on a tablet" loading="lazy" width="600" height="960"><figcaption>Tablet</figcaption></figure>
+    </div>
+    <div class="grid g4" style="margin-top:26px">
+      <div class="card"><h3>📱 Android 7.0+</h3><p>Phones and tablets, under 10 MB to download.</p></div>
+      <div class="card"><h3>✈️ Works offline</h3><p>Every mode plays without internet.</p></div>
+      <div class="card"><h3>🔋 Light</h3><p>Simple 2D drawing that's easy on the battery.</p></div>
+      <div class="card"><h3>🔊 Your choice</h3><p>Music, sounds and vibration each switch on or off.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ V1 -->
 <section id="v1">
   <div class="wrap">
@@ -272,6 +448,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
         <ul><li><b>No ads at all for your first 7 days</b></li><li>After that: one short ad every second game — never during play</li><li>Optional videos for free rewards</li><li>No banners. Remove Ads or the Pass turns them off</li></ul></div>
     </div>
     <p style="color:var(--muted);font-size:13px;margin-top:10px">* Google Play Games features switch on as soon as the game is live on Google Play.</p>
+  </div>
+</section>
+
+<!-- ============================================================ DIARY -->
+<section id="diary">
+  <div class="wrap">
+    <h2>Development diary</h2>
+    <p class="lead">How Version 1 came together.</p>
+    <ul class="diary">
+      <li><b>15 Nov 2026 — First playable.</b> 8×8 board, 37 piece shapes, combo streaks, Classic and Daily Quake, boosters and the gem art.</li>
+      <li><b>16 Nov 2026 — The big Version 1 update.</b> Adventure (120 levels, 6 worlds), Hold slot, rainbow gems, frozen blocks, Weekly Events, Daily Missions, 20 trophies, Google Play Games, styles, music and four languages.</li>
+      <li><b>16 Nov 2026 — Ready for launch.</b> Guided tutorial, colour-blind symbols, a fairer coin balance, a pre-registration reward, and store pages in four languages.</li>
+      <li><b>Late Nov 2026 — Google Play.</b> Internal testing first, then pre-registration and launch.</li>
+    </ul>
   </div>
 </section>
 
@@ -356,6 +546,38 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
   </div>
 </section>
 
+<!-- ============================================================ SUPPORT -->
+<section id="support">
+  <div class="wrap">
+    <h2>Help &amp; support</h2>
+    <div class="grid g3">
+      <div class="card"><h3>🧾 Restore purchases</h3><p>Bought Remove Ads or the Pass on another phone? Sign in with the same Google account and tap <b>Settings › Restore purchases</b>.</p></div>
+      <div class="card"><h3>💳 Refunds</h3><p>Purchases go through Google Play. You can request a refund from your Google Play order history, or email us and we'll help.</p></div>
+      <div class="card"><h3>🔒 Your data</h3><p>We don't run servers and don't collect personal data. Ads come from Google AdMob; you can change ad consent with the "i" button. Read the <a href="privacy.html">privacy policy</a>.</p></div>
+      <div class="card"><h3>☁️ Moving phones</h3><p>Keep Android backup on, or sign in to Google Play Games, and your progress comes back on the new phone.</p></div>
+      <div class="card"><h3>🗑️ Delete your progress</h3><p>Uninstall the game, or clear its storage in Android Settings › Apps › Tilequake. Play Games data can be removed in the Google Play Games app.</p></div>
+      <div class="card"><h3>✉️ Contact us</h3><p>Bugs, ideas or questions: <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a>. Please include your phone model and what happened.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRESS -->
+<section id="press" class="press">
+  <div class="wrap">
+    <h2>Press kit</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Fact sheet</h3><ul>
+        <li><b>Name:</b> Tilequake: Block Puzzle</li><li><b>Developer &amp; publisher:</b> Hassan Azhar · BriskNest</li>
+        <li><b>Platform:</b> Android (Google Play); iPhone and iPad planned for 2027</li><li><b>Release:</b> late November 2026</li>
+        <li><b>Price:</b> free, with optional in-app purchases and ads</li><li><b>Languages:</b> English, Arabic, Urdu, Spanish</li>
+        <li><b>Age:</b> 13+</li><li><b>Contact:</b> <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a></li></ul></div>
+      <div class="card"><h3>About the game</h3>
+        <p>Tilequake is an original gem block puzzle. Players drag pieces onto an 8×8 board and break full rows and columns, building combo streaks that shake the board. It has 120 Adventure levels across six worlds, a Daily Quake puzzle shared by every player, a weekly themed event, daily missions and 20 trophies, and it plays fully offline in four languages.</p>
+        <p style="margin-top:14px"><a class="btn ghost" href="img/icon.webp" download>Download icon</a><a class="btn ghost" href="img/feature.webp" download>Download banner</a></p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ FAQ -->
 <section id="faq">
   <div class="wrap">
@@ -366,6 +588,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
     <details><summary>How do I remove ads?</summary><p>There are no ads in your first 7 days. After that you can buy Remove Ads once ($2.99) or join the Tilequake Pass. Both also restore on your other Android phones.</p></details>
     <details><summary>Which languages are supported?</summary><p>English, Arabic, Urdu and Spanish. Tilequake follows your phone's language; you can change it in Settings.</p></details>
     <details><summary>Is it suitable for children?</summary><p>Tilequake is made for players 13 and older. A kids' edition without ads (Wonder Squad Blocks) is on the roadmap.</p></details>
+        <details><summary>What's the difference between Classic and Adventure?</summary><p>Classic is endless: play until no piece fits and chase your best score. Adventure has 120 levels, each with a goal, a move limit and up to 3 stars.</p></details>
+    <details><summary>Can I rotate pieces?</summary><p>No. Pieces always keep their shape. That's part of the challenge, and why the Hold slot and Reroll booster exist.</p></details>
+    <details><summary>What happens when no piece fits?</summary><p>The run ends. In Classic you can use an Aftershock second chance once (300 coins or a short video), which breaks 2 rows and 2 columns so you can keep going.</p></details>
+    <details><summary>Is the Daily Quake really the same for everyone?</summary><p>Yes. Everyone in the world gets the same pieces in the same order that day, so scores are fair to compare on the leaderboard.</p></details>
+    <details><summary>Do I need a Google account?</summary><p>No. You can play everything without signing in. Signing in to Google Play Games adds leaderboards, achievements and cloud save.</p></details>
+    <details><summary>Does the Pass renew automatically?</summary><p>Yes, every month, until you cancel in Google Play › Payments &amp; subscriptions. You keep the Pass until the end of the month you paid for.</p></details>
+    <details><summary>Will there be new levels?</summary><p>Yes. Version 2 (early 2027) adds levels 121–240 and two new worlds. See the roadmap above.</p></details>
     <details><summary>I found a bug or have an idea.</summary><p>Write to <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a> — we read every message.</p></details>
   </div>
 </section>
