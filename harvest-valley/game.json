@@ -1,0 +1,160 @@
+{
+ "slug": "harvest-valley",
+ "name": "Harvest Valley",
+ "storeTitle": "Harvest Valley: Farm Story",
+ "studio": "BriskNest US LLC",
+ "brand": "BriskNest Arcade",
+ "ages": "13+",
+ "genre": [
+  "Farming",
+  "Simulation",
+  "Casual"
+ ],
+ "price": "Free (optional in-app purchases)",
+ "status": "coming-soon",
+ "version": "1.0",
+ "platforms": {
+  "android": {
+   "package": "com.brisknest.harvestvalley",
+   "playUrl": "https://play.google.com/store/apps/details?id=com.brisknest.harvestvalley",
+   "live": false
+  },
+  "ios": {
+   "planned": "Version 3"
+  }
+ },
+ "url": "https://brisknest.us/games/harvest-valley/",
+ "privacyUrl": "https://brisknest.us/games/harvest-valley/privacy.html",
+ "icon": "https://brisknest.us/games/harvest-valley/img/icon.webp",
+ "featureGraphic": "https://brisknest.us/games/harvest-valley/img/feature.webp",
+ "screenshots": [
+  "https://brisknest.us/games/harvest-valley/img/shot-farm.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-meadow.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-golden.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-visitor.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-tasks.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-pass.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-treasures.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-friends.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-spanish.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-sign.webp",
+  "https://brisknest.us/games/harvest-valley/img/shot-photo.webp"
+ ],
+ "languages": [
+  "en",
+  "es",
+  "pt",
+  "fr",
+  "ar",
+  "ur"
+ ],
+ "contact": "hassan.azhar@brisknest.us",
+ "highlights": [
+  "Swipe to harvest and replant",
+  "9 crops, 3 fruit trees, 6 animals and bees",
+  "10 workshops from Bakery to Juice Press",
+  "Truck orders, roadside stand, visitors, River Barge",
+  "Daily tasks, Farm Pass, critters and treasure collections",
+  "Visit friends, help their barge and trees, send gifts",
+  "Seasons, rain, snow and a monthly festival",
+  "6 languages, phones and tablets, portrait and landscape",
+  "Name your farm: a sign friends can see",
+  "Photo mode: save and share your farm"
+ ],
+ "roadmap": {
+  "v1": "Launch on Google Play: 30 levels, friends, Farm Pass, 6 languages",
+  "v1.1": "Fixes from player feedback, winter festival",
+  "v2": "Farm Clubs, ponies and Pony Race, levels to 40, Maple Woods",
+  "v3": "iPhone and iPad with cross-play, farm transfer code, Valley Town"
+ },
+ "listing": {
+  "en": {
+   "title": "Harvest Valley: Farm Story",
+   "short": "Grow crops, raise animals, bake treats and build the cozy farm of your dreams!",
+   "full": "Welcome to Harvest Valley, a cozy farm that grows with you!\n\nSwipe across your fields to harvest and replant. Grow wheat, corn, carrots, strawberries, pumpkins, tomatoes, cotton and\nsunflowers. Pick apples, cherries and blueberries in your orchard. Raise chickens, cows, sheep, pigs and goats, and keep\nbees for golden honey. Turn it all into bread, cakes, muffins, juices, cheese, pizza and more in your own Bakery, Dairy,\nFlour Mill, Juice Press, Sauce Kitchen and other workshops.\n\n🚚 FILL TRUCK ORDERS – deliver what the valley needs and earn coins and XP.\n🧑‍🌾 FARM VISITORS – villagers walk onto your farm and pay well for what they need.\n🧺 RUN A ROADSIDE STAND – set your own prices and watch villagers stop by to shop.\n⛵ LOAD THE RIVER BARGE – fill six crates before it sails for a big bonus.\n👫 VISIT FRIENDS – share your farm code, visit friends' farms and help pack their barge.\n🏆 COUNTY FAIR – new tasks every week and a weekly board of the top farms.\n🌦️ SEASONS AND WEATHER – rain makes crops grow faster; seasonal decorations and a festival every month.\n🎣 GO FISHING – a relaxing mini-game at the pond. Watch for the golden fish!\n👩‍🌾 HIRE A FARMHAND – Juniper harvests, collects and replants while you're away.\n🐶 A PET OF YOUR OWN – adopt a puppy, kitten or bunny and give it a name.\n🌻 GROW YOUR FARM – new fields, Orchard Hill, Sunflower Meadow, Riverside and Golden Fields. Place decorations anywhere.\n\n• Beautiful 3D-style farm you can drag and zoom, with music\n• 30 levels to grow through, daily gifts and achievements\n• Plays offline; sign in with Google Play Games to back up your farm\n• Portrait and landscape, phones and tablets\n• Reminders when your crops are ready (optional)\n\nHarvest Valley is free to play. Optional in-app purchases of coins and boosters are available, and you can watch optional\nvideos for extra coins. A BriskNest game."
+  },
+  "es": {
+   "title": "Harvest Valley: Granja feliz",
+   "short": "¡Cultiva, cría animales, hornea delicias y construye la granja de tus sueños!",
+   "full": "¡Bienvenido a Harvest Valley, una granja acogedora que crece contigo!\n\nDesliza el dedo por tus campos para cosechar y volver a plantar. Cultiva trigo, maíz, zanahorias, fresas, calabazas,\ntomates, algodón y girasoles. Recoge manzanas, cerezas y arándanos en tu huerto. Cría gallinas, vacas, ovejas, cerdos y\ncabras, y cuida abejas para obtener miel dorada. Conviértelo todo en pan, pasteles, magdalenas, jugos, queso, pizza y más\nen tu Panadería, Lechería, Molino de harina, Prensa de jugos, Cocina de salsas y otros talleres.\n\n🚚 PEDIDOS DEL CAMIÓN – entrega lo que el valle necesita y gana monedas y XP.\n🧑‍🌾 VISITANTES – los aldeanos llegan a tu granja y pagan bien por lo que necesitan.\n🧺 PUESTO EN LA CARRETERA – pon tus propios precios y mira cómo pasan a comprar.\n⛵ BARCAZA DEL RÍO – llena seis cajas antes de que zarpe y gana un gran premio.\n👫 VISITA A TUS AMIGOS – comparte tu código de granja, visita granjas y ayuda a cargar su barcaza.\n🏆 FERIA DEL CONDADO – tareas nuevas cada semana y una tabla semanal con las mejores granjas.\n🌦️ ESTACIONES Y CLIMA – la lluvia hace crecer más rápido; decoraciones de temporada y un festival cada mes.\n🎣 VE A PESCAR – un minijuego relajante en el estanque. ¡Busca el pez dorado!\n👩‍🌾 CONTRATA AYUDA – Juniper cosecha, recoge y vuelve a plantar mientras no estás.\n🐶 TU PROPIA MASCOTA – adopta un perrito, un gatito o un conejito y ponle nombre.\n🌻 AGRANDA TU GRANJA – nuevos campos, Colina del Huerto, Prado de girasoles, Orilla del río y Campos Dorados. Pon decoraciones donde quieras.\n\n• Una preciosa granja en 3D que puedes mover y acercar, con música\n• 30 niveles, regalos diarios y logros\n• Funciona sin conexión; inicia sesión con Google Play Juegos para guardar tu granja\n• Vertical y horizontal, teléfonos y tabletas\n• Avisos cuando tus cultivos estén listos (opcional)\n\nHarvest Valley es gratis. Incluye compras opcionales de monedas y potenciadores, y puedes ver videos opcionales para\nganar monedas extra. Un juego de BriskNest."
+  },
+  "pt": {
+   "title": "Harvest Valley: Fazenda feliz",
+   "short": "Plante, crie animais, faça delícias e construa a fazenda dos seus sonhos!",
+   "full": "Bem-vindo a Harvest Valley, uma fazenda aconchegante que cresce com você!\n\nDeslize o dedo pelos campos para colher e replantar. Plante trigo, milho, cenoura, morango, abóbora, tomate, algodão e\ngirassol. Colha maçãs, cerejas e mirtilos no pomar. Crie galinhas, vacas, ovelhas, porcos e cabras, e cuide de abelhas\npara ter mel dourado. Transforme tudo em pão, bolos, muffins, sucos, queijo, pizza e muito mais na sua Padaria,\nLaticínios, Moinho de farinha, Prensa de sucos, Cozinha de molhos e outras oficinas.\n\n🚚 PEDIDOS DO CAMINHÃO – entregue o que o vale precisa e ganhe moedas e XP.\n🧑‍🌾 VISITANTES – moradores chegam à sua fazenda e pagam bem pelo que precisam.\n🧺 BARRACA NA ESTRADA – defina seus preços e veja os moradores passarem para comprar.\n⛵ BARCAÇA DO RIO – encha seis caixas antes da partida e ganhe um grande bônus.\n👫 VISITE AMIGOS – compartilhe o código da sua fazenda, visite amigos e ajude a carregar a barcaça deles.\n🏆 FEIRA DO CONDADO – tarefas novas toda semana e um placar semanal das melhores fazendas.\n🌦️ ESTAÇÕES E CLIMA – a chuva acelera as plantações; decorações da estação e uma festa todo mês.\n🎣 VÁ PESCAR – um minijogo relaxante no lago. Fique de olho no peixe dourado!\n👩‍🌾 CONTRATE AJUDA – Juniper colhe, coleta e replanta enquanto você está fora.\n🐶 SEU PRÓPRIO BICHINHO – adote um cachorrinho, gatinho ou coelhinho e dê um nome.\n🌻 AUMENTE SUA FAZENDA – novos campos, Colina do Pomar, Campo de girassóis, Beira-rio e Campos Dourados. Decore onde quiser.\n\n• Uma linda fazenda em 3D para arrastar e dar zoom, com música\n• 30 níveis, presentes diários e conquistas\n• Funciona offline; entre com o Google Play Games para fazer backup da sua fazenda\n• Retrato e paisagem, celulares e tablets\n• Avisos quando as plantações ficarem prontas (opcional)\n\nHarvest Valley é gratuito. Há compras opcionais de moedas e impulsos, e você pode ver vídeos opcionais para ganhar moedas\nextras. Um jogo BriskNest."
+  },
+  "fr": {
+   "title": "Harvest Valley : Ma ferme",
+   "short": "Cultive, élève des animaux, prépare des gourmandises et bâtis la ferme rêvée !",
+   "full": "Bienvenue à Harvest Valley, une ferme douillette qui grandit avec toi !\n\nGlisse le doigt sur tes champs pour récolter et replanter. Cultive du blé, du maïs, des carottes, des fraises, des\ncitrouilles, des tomates, du coton et des tournesols. Cueille pommes, cerises et myrtilles dans ton verger. Élève poules,\nvaches, moutons, cochons et chèvres, et des abeilles pour un miel doré. Transforme tout en pain, gâteaux, muffins, jus,\nfromage, pizza et plus encore dans ta Boulangerie, ta Laiterie, ton Moulin à farine, ta Presse à jus, ta Cuisine à sauces\net tes autres ateliers.\n\n🚚 COMMANDES DU CAMION – livre ce dont la vallée a besoin et gagne des pièces et de l'XP.\n🧑‍🌾 VISITEURS – des villageois viennent à ta ferme et paient bien ce qu'il leur faut.\n🧺 STAND AU BORD DE LA ROUTE – fixe tes prix et regarde les villageois s'arrêter.\n⛵ PÉNICHE – remplis six caisses avant son départ pour un gros bonus.\n👫 RENDS VISITE À TES AMIS – partage ton code de ferme, visite leurs fermes et aide-les à remplir leur péniche.\n🏆 FOIRE DU COMTÉ – de nouvelles tâches chaque semaine et un classement hebdomadaire des meilleures fermes.\n🌦️ SAISONS ET MÉTÉO – la pluie fait pousser plus vite ; décorations de saison et une fête chaque mois.\n🎣 VA PÊCHER – un mini-jeu relaxant à l'étang. Guette le poisson doré !\n👩‍🌾 ENGAGE DE L'AIDE – Juniper récolte, ramasse et replante pendant ton absence.\n🐶 TON ANIMAL – adopte un chiot, un chaton ou un lapin et donne-lui un nom.\n🌻 AGRANDIS TA FERME – nouveaux champs, Colline du Verger, Prairie des tournesols, Bord de la rivière et Champs Dorés. Place tes décorations où tu veux.\n\n• Une jolie ferme en 3D à faire glisser et zoomer, avec musique\n• 30 niveaux, cadeaux quotidiens et succès\n• Fonctionne hors ligne ; connecte-toi à Google Play Jeux pour sauvegarder ta ferme\n• Portrait et paysage, téléphones et tablettes\n• Rappels quand tes cultures sont prêtes (facultatif)\n\nHarvest Valley est gratuit. Des achats facultatifs de pièces et de bonus sont proposés, et tu peux regarder des vidéos\nfacultatives pour gagner des pièces. Un jeu BriskNest."
+  },
+  "ar": {
+   "title": "Harvest Valley: مزرعتي",
+   "short": "ازرع المحاصيل وربِّ الحيوانات واصنع الحلويات وابنِ مزرعة أحلامك!",
+   "full": "مرحبًا بك في Harvest Valley، مزرعة دافئة تكبر معك!\n\nاسحب إصبعك على الحقول لتحصد وتعيد الزراعة. ازرع القمح والذرة والجزر والفراولة والقرع والطماطم والقطن وعباد الشمس.\nاقطف التفاح والكرز والتوت الأزرق في بستانك. ربِّ الدجاج والأبقار والخراف والخنازير والماعز، واعتنِ بالنحل لتحصل على\nعسل ذهبي. حوّل كل ذلك إلى خبز وكعك ومافن وعصائر وجبن وبيتزا والمزيد في مخبزك ومصنع الألبان ومطحنة الدقيق ومعصرة\nالعصير ومطبخ الصلصات وورش أخرى.\n\n🚚 طلبات الشاحنة – سلّم ما يحتاجه الوادي واربح العملات والخبرة.\n🧑‍🌾 زوار المزرعة – يأتي القرويون إلى مزرعتك ويدفعون جيدًا مقابل ما يحتاجونه.\n🧺 كشك الطريق – حدّد أسعارك وشاهد القرويين يتوقفون للشراء.\n⛵ بارجة النهر – املأ ستة صناديق قبل أن تبحر واربح مكافأة كبيرة.\n👫 زُر أصدقاءك – شارك رمز مزرعتك وزُر مزارع أصدقائك وساعدهم في تعبئة بارجتهم.\n🏆 معرض المقاطعة – مهام جديدة كل أسبوع ولوحة أسبوعية لأفضل المزارع.\n🌦️ الفصول والطقس – المطر يسرّع نمو المحاصيل؛ زينة موسمية ومهرجان كل شهر.\n🎣 اذهب للصيد – لعبة مصغّرة مريحة عند البركة. ترقّب السمكة الذهبية!\n👩‍🌾 وظّف مساعدة – جونيبر تحصد وتجمع وتعيد الزراعة أثناء غيابك.\n🐶 حيوانك الأليف – تبنَّ جروًا أو قطة أو أرنبًا وأعطه اسمًا.\n🌻 وسّع مزرعتك – حقول جديدة وتلة البستان ومرج عباد الشمس وضفة النهر والحقول الذهبية. ضع الزينة أينما تريد.\n\n• مزرعة جميلة ثلاثية الأبعاد يمكنك تحريكها وتكبيرها، مع موسيقى\n• 30 مستوى وهدايا يومية وإنجازات\n• تعمل دون اتصال؛ سجّل الدخول عبر Google Play Games لحفظ مزرعتك\n• وضع عمودي وأفقي، للهواتف والأجهزة اللوحية\n• تنبيهات عند جاهزية المحاصيل (اختياري)\n\nHarvest Valley مجانية. تتوفر مشتريات اختيارية للعملات والمعزّزات، ويمكنك مشاهدة فيديوهات اختيارية لربح عملات إضافية.\nلعبة من BriskNest."
+  },
+  "ur": {
+   "title": "Harvest Valley: میرا فارم",
+   "short": "فصلیں اُگائیں، جانور پالیں، مزیدار چیزیں بنائیں اور خوابوں کا فارم بسائیں!",
+   "full": "Harvest Valley میں خوش آمدید، ایک پیارا سا فارم جو آپ کے ساتھ بڑھتا ہے!\n\nکھیتوں پر انگلی پھیر کر فصل کاٹیں اور دوبارہ لگائیں۔ گندم، مکئی، گاجر، اسٹرابیری، کدو، ٹماٹر، کپاس اور سورج مکھی\nاُگائیں۔ اپنے باغ سے سیب، چیری اور بلیو بیری توڑیں۔ مرغیاں، گائیں، بھیڑیں، سور اور بکریاں پالیں، اور سنہرے شہد کے لیے\nشہد کی مکھیاں رکھیں۔ یہ سب اپنی بیکری، ڈیری، آٹا چکی، جوس پریس، چٹنی باورچی خانے اور دوسری ورکشاپوں میں روٹی، کیک،\nمفن، جوس، پنیر، پیزا اور بہت کچھ میں بدلیں۔\n\n🚚 ٹرک کے آرڈر – وادی کی ضرورت کی چیزیں بھیجیں اور سکے اور XP کمائیں۔\n🧑‍🌾 فارم کے مہمان – گاؤں والے آپ کے فارم پر آتے ہیں اور اپنی ضرورت کی چیزوں کے اچھے دام دیتے ہیں۔\n🧺 سڑک کنارے اسٹال – اپنی قیمتیں رکھیں اور گاؤں والوں کو خریداری کرتے دیکھیں۔\n⛵ دریائی کشتی – روانگی سے پہلے چھے کریٹ بھریں اور بڑا انعام پائیں۔\n👫 دوستوں سے ملیں – اپنا فارم کوڈ شیئر کریں، دوستوں کے فارم دیکھیں اور ان کی کشتی بھرنے میں مدد کریں۔\n🏆 کاؤنٹی میلہ – ہر ہفتے نئے کام اور بہترین فارموں کا ہفتہ وار بورڈ۔\n🌦️ موسم اور بارش – بارش فصلیں تیز اُگاتی ہے؛ موسمی سجاوٹ اور ہر مہینے ایک میلہ۔\n🎣 مچھلی پکڑیں – تالاب پر سکون دینے والا چھوٹا کھیل۔ سنہری مچھلی پر نظر رکھیں!\n👩‍🌾 مددگار رکھیں – جونیپر آپ کی غیر موجودگی میں فصل کاٹتی، جمع کرتی اور دوبارہ لگاتی ہے۔\n🐶 اپنا پالتو – کتے، بلی یا خرگوش کا بچہ پالیں اور اس کا نام رکھیں۔\n🌻 فارم بڑا کریں – نئے کھیت، باغ والی پہاڑی، سورج مکھی کا میدان، دریا کنارہ اور سنہرے کھیت۔ سجاوٹ جہاں چاہیں رکھیں۔\n\n• خوبصورت 3D فارم جسے گھسیٹ اور زوم کر سکتے ہیں، موسیقی کے ساتھ\n• 30 لیول، روزانہ تحفے اور کامیابیاں\n• بغیر انٹرنیٹ چلتا ہے؛ فارم محفوظ کرنے کے لیے Google Play Games سے سائن ان کریں\n• عمودی اور افقی، فون اور ٹیبلٹ\n• فصلیں تیار ہونے پر یاد دہانی (اختیاری)\n\nHarvest Valley مفت ہے۔ سکوں اور بوسٹرز کی اختیاری خریداری دستیاب ہے، اور اضافی سکوں کے لیے اختیاری ویڈیوز دیکھ\nسکتے ہیں۔ BriskNest کا گیم۔"
+  }
+ },
+ "adsTxt": "google.com, pub-6516676449054250, DIRECT, f08c47fec0942fa0",
+ "art": [
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-harvest.webp",
+   "title": "Swipe to harvest"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-animals.webp",
+   "title": "Raise happy animals"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-workshops.webp",
+   "title": "Bake, churn and press"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-orders.webp",
+   "title": "Fill truck orders"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-stand.webp",
+   "title": "Sell at your own price"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-barge.webp",
+   "title": "Pack the River Barge"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-friends.webp",
+   "title": "Visit friends"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-seasons.webp",
+   "title": "Four seasons"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-fair.webp",
+   "title": "County Fair and festivals"
+  },
+  {
+   "src": "https://brisknest.us/games/harvest-valley/img/art-critters.webp",
+   "title": "Critters and treasures"
+  }
+ ],
+ "hero": "https://brisknest.us/games/harvest-valley/img/hero.webp",
+ "pageSections": [
+  "life",
+  "screens",
+  "day",
+  "guide",
+  "goods",
+  "unlocks",
+  "friends",
+  "free",
+  "roadmap",
+  "safety",
+  "press",
+  "faq"
+ ]
+}
