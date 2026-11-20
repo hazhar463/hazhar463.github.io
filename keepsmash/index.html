@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keepsmash — How to Play, Cards, Roadmap · BriskNest Games</title>
+<meta name="description" content="Keepsmash is a free 3D real-time card battle game with toy armies. Learn how to play, see every card, what is in version 1 and what is coming next.">
+<link rel="icon" href="img/icon.png">
+<link rel="canonical" href="https://brisknest.us/games/keepsmash/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BriskNest Games">
+<meta property="og:title" content="Keepsmash: Toy Card Battles">
+<meta property="og:description" content="Free real-time 3D card battles with toy armies. How to play, every card, roadmap.">
+<meta property="og:image" content="https://brisknest.us/games/keepsmash/img/keyart.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fff3dc;--ink:#3b2a1a;--gold:#f5b82e;--blue:#3d7bf2;--red:#e84a4a;--purple:#9b51e0;--green:#39b54a;--card:#fffaf0;--muted:#7a6650}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--blue)}
+header.hero{position:relative;min-height:440px;background:#2b1d12 url(img/keyart.jpg) center/cover;display:flex;align-items:flex-end}
+header.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(43,29,18,.92))}
+.hero-in{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:32px 20px;width:100%;color:#fff}
+.hero h1{font-size:clamp(44px,8vw,86px);margin:0;letter-spacing:2px;color:var(--gold);text-shadow:0 4px 0 #3b2a1a,0 8px 18px rgba(0,0,0,.5);font-weight:900}
+.hero p{font-size:20px;max-width:720px;margin:8px 0 18px}
+.btn{display:inline-block;padding:14px 26px;border-radius:16px;background:var(--gold);color:#fff;font-weight:800;text-decoration:none;border:4px solid #c88f12;box-shadow:0 5px 0 #a8770c;margin:4px 8px 4px 0;text-shadow:0 2px 0 rgba(0,0,0,.25)}
+.btn.blue{background:var(--blue);border-color:#2a5fc4;box-shadow:0 5px 0 #20489a}
+.btn.ghost{background:transparent;border-color:#fff;box-shadow:none}
+nav.toc{position:sticky;top:0;z-index:5;background:#4a2f1d;overflow-x:auto;white-space:nowrap;padding:10px 16px}
+nav.toc a{color:#ffe7bd;text-decoration:none;font-weight:700;margin-right:18px;font-size:15px}
+main{max-width:1100px;margin:0 auto;padding:10px 20px 60px}
+section{margin:44px 0}
+h2{font-size:34px;margin:0 0 12px;color:#4a2f1d}
+h2 small{font-size:16px;color:var(--muted);font-weight:600;margin-left:8px}
+h3{font-size:22px;margin:22px 0 8px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.box{background:var(--card);border:3px solid #ecd6b3;border-radius:20px;padding:18px 20px;box-shadow:0 4px 0 #e2c79c}
+.box h3{margin-top:0}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:13px;font-weight:800;color:#fff;margin-right:6px}
+.common{background:#5f9ae8}.rare{background:#f08a2e}.epic{background:#9b51e0}.legendary{background:#d9a514}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.cardx{background:#fff;border-radius:18px;border:4px solid #ddd;padding:12px;display:flex;gap:12px;align-items:flex-start}
+.cardx img{width:84px;height:84px;object-fit:contain;flex:0 0 84px;background:#fdf3e1;border-radius:12px}
+.cardx b{font-size:17px}
+.cost{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--purple);color:#fff;font-weight:900;margin-right:6px;font-size:15px}
+.stats{font-size:13px;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden}
+th,td{padding:10px 12px;border-bottom:1px solid #f0e2c9;text-align:left;vertical-align:top;font-size:15px}
+th{background:#4a2f1d;color:#ffe7bd}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 52px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #c88f12}
+.shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px}
+.shots img{height:440px;border-radius:22px;border:5px solid #4a2f1d;box-shadow:0 6px 0 #2b1d12}
+.ver{border-left:8px solid var(--gold)}
+.ver.v1{border-left-color:var(--green)}
+.ver.v11{border-left-color:var(--blue)}
+.ver.v2{border-left-color:var(--purple)}
+.ver.v3{border-left-color:var(--red)}
+.ver ul{margin:6px 0 0;padding-left:20px}
+.tag{font-size:12px;font-weight:800;padding:3px 9px;border-radius:8px;background:#efe2c9;color:#6b5640;margin-left:6px;vertical-align:middle}
+.tag.live{background:#d6f5dc;color:#1f7a32}
+.timeline{position:relative;padding-left:26px;border-left:4px dashed #e2c79c}
+.timeline .box{margin-bottom:14px;position:relative}
+.timeline .box::before{content:"";position:absolute;left:-41px;top:22px;width:22px;height:22px;border-radius:50%;background:var(--gold);border:4px solid #fff3dc}
+footer{background:#4a2f1d;color:#ffe7bd;padding:30px 20px;text-align:center;font-size:14px}
+footer a{color:#ffd34d}
+.note{font-size:14px;color:var(--muted)}
+kbd{background:#4a2f1d;color:#fff;border-radius:6px;padding:1px 7px;font-size:14px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gallery figure{margin:0;cursor:zoom-in}
+.gallery img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;border:3px solid #3b2a1a;display:block;background:#2b1d12;transition:transform .15s}
+.gallery figure.wide{grid-column:span 2}.gallery figure.wide img{aspect-ratio:16/9}
+.gallery figure.sq img{aspect-ratio:1/1}
+.gallery img:hover{transform:translateY(-3px)}
+.gallery figcaption{font-size:13px;font-weight:700;margin-top:6px;color:var(--muted)}
+@media(max-width:520px){.gallery figure.wide{grid-column:span 2}}
+#lb{position:fixed;inset:0;background:rgba(20,12,6,.92);display:none;align-items:center;justify-content:center;z-index:50;flex-direction:column}
+#lb.on{display:flex}#lb img{max-width:94vw;max-height:84vh;border-radius:12px}
+#lb p{color:#ffe7bd;font-weight:700;margin:12px}
+#lb button{position:absolute;top:50%;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:34px;width:54px;height:54px;border-radius:50%;cursor:pointer}
+#lb .prev{left:12px}#lb .next{right:12px}#lb .close{top:14px;right:14px;font-size:26px}
+video{width:100%;max-width:960px;border-radius:18px;border:4px solid #3b2a1a;display:block;margin:0 auto;background:#000}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid #ecd6b3;border-radius:99px;padding:3px 10px 3px 3px;margin:3px;font-size:14px;font-weight:700}
+.chip img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:#fff3dc}
+.chip i{font-style:normal;background:#9b51e0;color:#fff;border-radius:99px;padding:0 7px;font-size:12px}
+.stat{font-size:34px;font-weight:900;color:#c88f12;line-height:1}
+.story{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.story div{background:var(--card);border:2px solid #ecd6b3;border-radius:14px;padding:10px 12px 10px 52px;position:relative;font-size:15px}
+.story div::before{counter-increment:s;content:counter(s);position:absolute;left:10px;top:10px;width:32px;height:32px;border-radius:50%;background:#4a2f1d;color:#f5b82e;font-weight:900;display:flex;align-items:center;justify-content:center}
+.story b{display:block}.story small{color:var(--muted)}
+.diff{font-size:11px;font-weight:800;padding:1px 8px;border-radius:99px;color:#fff;margin-left:4px}
+.d0{background:#39b54a}.d1{background:#3d7bf2}.d2{background:#f08a2e}.d3{background:#e84a4a}
+.press a{font-weight:700}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>KEEPSMASH</h1>
+    <p><b>Real-time 3D toy card battles.</b> Build a deck of wind-up knights, plush dragons and rubber-duck cannons, then smash the enemy keeps across the playroom rug. Free to play, fair, and fun for kids and grown-ups.</p>
+    <a class="btn" href="#how">How to play</a>
+    <a class="btn blue" href="https://play.google.com/store/apps/details?id=com.brisknest.keepsmash">Get it on Google Play</a>
+    <a class="btn ghost" href="#roadmap">What's coming</a>
+  </div>
+</header>
+<nav class="toc">
+  <a href="#gallery">Pictures</a><a href="#trailer">Trailer</a><a href="#how">How to play</a><a href="#rules">Battle rules</a><a href="#controls">Controls</a><a href="#cards">Cards</a><a href="#decks">Starter decks</a><a href="#counters">Counters</a><a href="#modes">Modes</a><a href="#story">Story</a><a href="#progress">Progress</a><a href="#tips">Tips</a><a href="#v1">In version 1</a><a href="#roadmap">Roadmap</a><a href="#rollout">Rollout plan</a><a href="#apple">iPhone plan</a><a href="#faq">FAQ</a><a href="#notes">Release notes</a><a href="#press">Press kit</a>
+</nav>
+<main>
+
+<section id="gallery">
+  <h2>Pictures <small>tap to enlarge</small></h2>
+  <div class="gallery">
+    <figure class=""><img src="img/gallery/01-battle-thumb.jpg" data-full="img/gallery/01-battle.jpg" alt="Real-time 3D battles on the playroom rug" loading="lazy"><figcaption>Real-time 3D battles on the playroom rug</figcaption></figure>
+    <figure class=""><img src="img/gallery/02-spell-thumb.jpg" data-full="img/gallery/02-spell.jpg" alt="Spells squash whole crowds" loading="lazy"><figcaption>Spells squash whole crowds</figcaption></figure>
+    <figure class=""><img src="img/gallery/03-tutorial-thumb.jpg" data-full="img/gallery/03-tutorial.jpg" alt="A guided first battle" loading="lazy"><figcaption>A guided first battle</figcaption></figure>
+    <figure class=""><img src="img/gallery/04-home-thumb.jpg" data-full="img/gallery/04-home.jpg" alt="Daily quests and free Toy Boxes" loading="lazy"><figcaption>Daily quests and free Toy Boxes</figcaption></figure>
+    <figure class=""><img src="img/gallery/05-deck-thumb.jpg" data-full="img/gallery/05-deck.jpg" alt="Build your 8-card deck" loading="lazy"><figcaption>Build your 8-card deck</figcaption></figure>
+    <figure class=""><img src="img/gallery/06-story-thumb.jpg" data-full="img/gallery/06-story.jpg" alt="20 story battles" loading="lazy"><figcaption>20 story battles</figcaption></figure>
+    <figure class=""><img src="img/gallery/07-results-thumb.jpg" data-full="img/gallery/07-results.jpg" alt="Win crowns, coins and Toy Boxes" loading="lazy"><figcaption>Win crowns, coins and Toy Boxes</figcaption></figure>
+    <figure class=""><img src="img/gallery/08-shop-thumb.jpg" data-full="img/gallery/08-shop.jpg" alt="Daily deals and fair coin packs" loading="lazy"><figcaption>Daily deals and fair coin packs</figcaption></figure>
+    <figure class="wide"><img src="img/gallery/09-tablet-thumb.jpg" data-full="img/gallery/09-tablet.jpg" alt="Landscape on tablets" loading="lazy"><figcaption>Landscape on tablets</figcaption></figure>
+    <figure class="sq"><img src="img/gallery/10-toy-cast-thumb.jpg" data-full="img/gallery/10-toy-cast.jpg" alt="Concept art: the toy cast" loading="lazy"><figcaption>Concept art: the toy cast</figcaption></figure>
+  </div>
+</section>
+
+<section id="trailer">
+  <h2>Trailer <small>30 seconds</small></h2>
+  <video controls preload="none" playsinline poster="media/trailer-poster.jpg"><source src="media/keepsmash-trailer.mp4" type="video/mp4">Your browser can't play this video. <a href="media/keepsmash-trailer.mp4">Download the trailer</a>.</video>
+</section>
+
+
+<section id="how">
+  <h2>How to play</h2>
+  <div class="grid g2">
+    <div class="box">
+      <h3>The goal: smash keeps, win crowns</h3>
+      <p>Each side has <b>two Watch Keeps</b> (one on each lane) and one <b>Great Keep</b> in the middle. Knock down a Watch Keep for <b>1 crown</b>. Knock down the Great Keep for <b>all 3 crowns</b> and an instant win.</p>
+      <p>A battle lasts <b>3 minutes</b>. The player with more crowns wins. If crowns are tied, <b>Overtime</b> starts (1 minute): the next crown wins. Still tied? The side whose weakest keep has more health left wins.</p>
+    </div>
+    <div class="box">
+      <h3>Spark: your energy</h3>
+      <p>The purple <b>Spark bar</b> at the bottom fills up over time, to a maximum of 10. Every card costs Spark (the number in the purple circle).</p>
+      <p>In the <b>last minute Spark fills twice as fast</b>, and in Overtime <b>three times as fast</b>. Don't sit at 10 Spark for long: you are wasting energy!</p>
+    </div>
+    <div class="box">
+      <h3>Your deck and hand</h3>
+      <p>You take a <b>deck of 8 cards</b> into battle. You always hold <b>4 cards</b>; the small card on the left is your <b>next</b> card. When you play a card it goes to the back of the line, so you cycle through your whole deck.</p>
+    </div>
+    <div class="box">
+      <h3>Where you can play</h3>
+      <p><b>Troops and buildings</b> go on <b>your half</b> of the rug (the side closest to you). When you knock down an enemy Watch Keep, the area just past the river in that lane opens up for you too.</p>
+      <p><b>Spells</b> (Bouncy Ball, Bottle Rocket, Lullaby) can be dropped <b>anywhere</b>.</p>
+    </div>
+  </div>
+  <h3>How troops behave</h3>
+  <ol class="steps">
+    <li>After you play a troop it takes about one second to wind up, then it walks toward the nearest enemy keep, crossing the river on a bridge.</li>
+    <li>On the way it fights any enemy it can see that it is able to target.</li>
+    <li><b>Building hunters</b> (Teddy Tank, Toy Train Ram, Balloon Bomber, Marble Golem) ignore troops and go straight for keeps and buildings.</li>
+    <li><b>Flying</b> troops (Paper Planes, Plush Dragon, Balloon Bomber) can only be hit by things that hit air: Kite Archers, Paper Planes, Plush Dragon, Crayon Wizard, spells and the keeps.</li>
+    <li><b>Buildings</b> (Block Catapult, Jack-in-the-Box, Cork Cannon, Pillow Fort) don't move. They slowly lose health over time, so place them where the enemy will walk past.</li>
+  </ol>
+</section>
+
+<section id="rules">
+  <h2>Battle rules in numbers</h2>
+  <div class="grid g3">
+    <div class="box"><div class="stat">3:00</div><h3>Battle time</h3><p>Three minutes. If crowns are level, <b>1 minute of overtime</b>: the first crown wins. Still level? The side whose most-damaged keep has more health left wins.</p></div>
+    <div class="box"><div class="stat">10</div><h3>Spark</h3><p>You start with <b>5 Spark</b>, store up to <b>10</b>, and gain 1 every <b>2.8 seconds</b>. <b>Double speed</b> in the last minute, <b>triple</b> in overtime.</p></div>
+    <div class="box"><div class="stat">3</div><h3>Keeps per side</h3><p>Two <b>Watch Keeps</b> (1,600 HP, range 7) and a <b>Great Keep</b> (2,700 HP, range 7). The Great Keep wakes up when it is hit or a Watch Keep falls. Knock it down for an instant 3-crown win.</p></div>
+    <div class="box"><div class="stat">4+1</div><h3>Your hand</h3><p>Four cards in hand and the next one shown. Play a card and it goes to the back of the line, so your 8 cards cycle round.</p></div>
+    <div class="box"><div class="stat">2</div><h3>Bridges</h3><p>Ground troops cross the river on the two bridges. Fliers go straight over. Knock down a Watch Keep and you can place troops further forward on that side.</p></div>
+    <div class="box"><div class="stat">+10%</div><h3>Per card level</h3><p>Each card level adds 10% health and damage, up to level 11. Keeps use your deck's average level.</p></div>
+  </div>
+</section>
+
+<section id="controls">
+  <h2>Controls</h2>
+  <div class="grid g3">
+    <div class="box"><h3>Drag &amp; drop</h3><p>Touch a card and drag it onto the rug. A white ring shows where it lands and how far it reaches; red means you can't place it there. Let go to play it.</p></div>
+    <div class="box"><h3>Tap &amp; tap</h3><p>Tap a card to pick it up (it pops up), then tap the rug where you want it.</p></div>
+    <div class="box"><h3>Pause</h3><p>Tap <kbd>II</kbd> at the top-left to pause, or to give up a battle you can't win.</p></div>
+  </div>
+  <p class="note">Keepsmash works in portrait and landscape, on phones and tablets. A "Battery saver" graphics option (More tab) turns off shadows for older phones.</p>
+</section>
+
+<section id="cards">
+  <h2>All cards <small>24 in version 1</small></h2>
+  <p>Stats are for level 1; each level adds +10% health and damage. Range "melee" means the troop must touch its target.</p>
+  <div class="cards">
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/knight.png" alt=""><div><span class="cost">3</span><b>Tin Knight</b><br><span class="pill common">Common</span>Troop<div class="stats">760 HP · 85 dmg · melee · ground</div>Sturdy wind-up knight. Great all-round defender.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/duck.png" alt=""><div><span class="cost">3</span><b>Duck Cannon</b><br><span class="pill common">Common</span>Troop<div class="stats">420 HP · 115 dmg · range 5 · ground</div>Fires rubber cannonballs from range.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/planes.png" alt=""><div><span class="cost">3</span><b>Paper Planes</b><br><span class="pill common">Common</span>Troop ×4, flying<div class="stats">130 HP each · 48 dmg · air &amp; ground</div>A fast squadron that hits anything.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/ninja.png" alt=""><div><span class="cost">2</span><b>Yo-Yo Ninja</b><br><span class="pill rare">Rare</span>Troop<div class="stats">340 HP · 100 dmg · short range · fast</div>Cheap and lightning quick.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/archer.png" alt=""><div><span class="cost">3</span><b>Kite Archers</b><br><span class="pill common">Common</span>Troop ×2<div class="stats">270 HP each · 72 dmg · range 5.5 · air &amp; ground</div>Shoot fliers and walkers from far away.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/teddy.png" alt=""><div><span class="cost">5</span><b>Teddy Tank</b><br><span class="pill rare">Rare</span>Troop · building hunter<div class="stats">3000 HP · 140 dmg · slow</div>Huge and cuddly. Only attacks buildings.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/bomber.png" alt=""><div><span class="cost">3</span><b>Bouncy Ball</b><br><span class="pill rare">Rare</span>Spell<div class="stats">360 area damage · radius 2.5 · 35% to keeps</div>A giant ball squashes a whole group.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/catapult.png" alt=""><div><span class="cost">4</span><b>Block Catapult</b><br><span class="pill rare">Rare</span>Building<div class="stats">950 HP · 150 splash · range 9.5 · lasts 32 s</div>Lobs blocks at ground troops from very far.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/robot.png" alt=""><div><span class="cost">4</span><b>Robo Builder</b><br><span class="pill common">Common</span>Troop<div class="stats">1150 HP · 95 dmg · melee · ground</div>Tough tin robot with a mighty hammer.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/dragon.png" alt=""><div><span class="cost">4</span><b>Plush Dragon</b><br><span class="pill epic">Epic</span>Troop, flying<div class="stats">560 HP · 75 splash · air &amp; ground</div>Puffs fiery fluff at groups.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/train.png" alt=""><div><span class="cost">4</span><b>Toy Train Ram</b><br><span class="pill rare">Rare</span>Troop · building hunter<div class="stats">1450 HP · 420 dmg · fast</div>Charges straight at keeps for heavy hits.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/jackbox.png" alt=""><div><span class="cost">3</span><b>Jack-in-the-Box</b><br><span class="pill epic">Epic</span>Building<div class="stats">720 HP · 190 dmg · range 2.6 · lasts 35 s</div>Pops out and bonks anything that walks by.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/top.png" alt=""><div><span class="cost">4</span><b>Spinning Top</b><br><span class="pill epic">Epic</span>Troop<div class="stats">950 HP · 72 dmg to all around it · fast hits</div>Spins through crowds.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/wizard.png" alt=""><div><span class="cost">5</span><b>Crayon Wizard</b><br><span class="pill epic">Epic</span>Troop<div class="stats">620 HP · 150 splash · range 5 · air &amp; ground</div>Rainbow blasts hit whole groups.</div></div>
+    <div class="cardx" style="border-color:#d9a514"><img src="img/fairy.png" alt=""><div><span class="cost">4</span><b>Lullaby</b><br><span class="pill legendary">Legendary</span>Spell<div class="stats">90 dmg · puts enemies to sleep for 3.5 s · radius 3.2</div>The music-box fairy freezes a whole area.</div></div>
+    <div class="cardx" style="border-color:#d9a514"><img src="img/golem.png" alt=""><div><span class="cost">7</span><b>Marble Golem</b><br><span class="pill legendary">Legendary</span>Troop · building hunter<div class="stats">3700 HP · 190 dmg · very slow</div>Bursts into two Marble Rollers when beaten.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/soldiers.png" alt=""><div><span class="cost">3</span><b>Toy Soldiers</b><br><span class="pill common">Common</span>Troop ×4<div class="stats">330 HP each · 70 dmg · melee · ground</div>A plastic squad that swarms together.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/mice.png" alt=""><div><span class="cost">1</span><b>Wind-Up Mice</b><br><span class="pill common">Common</span>Troop ×3<div class="stats">95 HP each · 48 dmg · very fast</div>Cheap distraction for big toys.</div></div>
+    <div class="cardx" style="border-color:#5f9ae8"><img src="img/cork.png" alt=""><div><span class="cost">3</span><b>Cork Cannon</b><br><span class="pill common">Common</span>Building<div class="stats">680 HP · 115 dmg · range 5.5 · lasts 30 s</div>Pops corks at ground troops.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/horse.png" alt=""><div><span class="cost">4</span><b>Rocking Horse Knight</b><br><span class="pill rare">Rare</span>Troop<div class="stats">1050 HP · 165 dmg · fast</div>Gallops in and hits hard with a lance.</div></div>
+    <div class="cardx" style="border-color:#f08a2e"><img src="img/pillow.png" alt=""><div><span class="cost">4</span><b>Pillow Fort</b><br><span class="pill rare">Rare</span>Building<div class="stats">2300 HP · no attack · lasts 40 s</div>A soft wall that pulls enemies away from your keeps.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/balloon.png" alt=""><div><span class="cost">5</span><b>Balloon Bomber</b><br><span class="pill epic">Epic</span>Troop, flying · building hunter<div class="stats">950 HP · 420 dmg</div>Floats over the river and bombs buildings.</div></div>
+    <div class="cardx" style="border-color:#9b51e0"><img src="img/rocket.png" alt=""><div><span class="cost">5</span><b>Bottle Rocket</b><br><span class="pill epic">Epic</span>Spell<div class="stats">760 dmg · radius 1.6 · 35% to keeps</div>A firework that blasts a small area very hard.</div></div>
+    <div class="cardx" style="border-color:#d9a514"><img src="img/rex.png" alt=""><div><span class="cost">6</span><b>Plushy Rex</b><br><span class="pill legendary">Legendary</span>Troop<div class="stats">2700 HP · 210 splash · melee</div>Stomps hit everything nearby.</div></div>
+  </div>
+</section>
+
+<section id="decks">
+  <h2>Starter decks</h2>
+  <p>Three tried decks. In the game, tap <b>Suggested decks</b> in the Deck tab to use one in a single tap, or <b>Auto-build deck</b> to let the game build a balanced deck from your strongest cards. A good deck has a tank or building hunter, two or three defenders, something that hits air, and a spell.</p>
+  <div class="grid g3">
+    <div class="box"><h3>Teddy Push <small>· average cost 3.2</small></h3><p><small>Arena 1 · great first deck</small></p><div><span class="chip"><img src="img/teddy.png" alt="">Teddy Tank <i>5</i></span><span class="chip"><img src="img/duck.png" alt="">Duck Cannon <i>3</i></span><span class="chip"><img src="img/archer.png" alt="">Kite Archers <i>3</i></span><span class="chip"><img src="img/knight.png" alt="">Tin Knight <i>3</i></span><span class="chip"><img src="img/planes.png" alt="">Paper Planes <i>3</i></span><span class="chip"><img src="img/ninja.png" alt="">Yo-Yo Ninja <i>2</i></span><span class="chip"><img src="img/bomber.png" alt="">Bouncy Ball <i>3</i></span><span class="chip"><img src="img/catapult.png" alt="">Block Catapult <i>4</i></span></div><p>Drop Teddy Tank behind your Great Keep when you have 8–10 Spark, then add Duck Cannon and Archers behind it as it crosses. Use the Catapult and Knight to defend first.</p></div>
+    <div class="box"><h3>Train Rush <small>· average cost 2.8</small></h3><p><small>Arena 3+ · fast and cheap</small></p><div><span class="chip"><img src="img/train.png" alt="">Toy Train Ram <i>4</i></span><span class="chip"><img src="img/mice.png" alt="">Wind-Up Mice <i>1</i></span><span class="chip"><img src="img/soldiers.png" alt="">Toy Soldiers <i>3</i></span><span class="chip"><img src="img/ninja.png" alt="">Yo-Yo Ninja <i>2</i></span><span class="chip"><img src="img/archer.png" alt="">Kite Archers <i>3</i></span><span class="chip"><img src="img/jackbox.png" alt="">Jack-in-the-Box <i>3</i></span><span class="chip"><img src="img/cork.png" alt="">Cork Cannon <i>3</i></span><span class="chip"><img src="img/bomber.png" alt="">Bouncy Ball <i>3</i></span></div><p>Send the Toy Train down one lane with Mice or Ninja next to it to soak hits. Defend with Jack-in-the-Box and Cork Cannon, then counter-push straight away.</p></div>
+    <div class="box"><h3>Golem Beatdown <small>· average cost 4.0</small></h3><p><small>Arena 7 · big and slow</small></p><div><span class="chip"><img src="img/golem.png" alt="">Marble Golem <i>7</i></span><span class="chip"><img src="img/wizard.png" alt="">Crayon Wizard <i>5</i></span><span class="chip"><img src="img/dragon.png" alt="">Plush Dragon <i>4</i></span><span class="chip"><img src="img/fairy.png" alt="">Lullaby <i>4</i></span><span class="chip"><img src="img/archer.png" alt="">Kite Archers <i>3</i></span><span class="chip"><img src="img/mice.png" alt="">Wind-Up Mice <i>1</i></span><span class="chip"><img src="img/knight.png" alt="">Tin Knight <i>3</i></span><span class="chip"><img src="img/rocket.png" alt="">Bottle Rocket <i>5</i></span></div><p>Start the Golem at the back. Build up Wizard and Dragon behind it, and save Lullaby for the moment the enemy defends. Bottle Rocket finishes a weak keep.</p></div>
+  </div>
+</section>
+
+<section id="counters">
+  <h2>Counter guide <small>what beats what</small></h2>
+  <table>
+    <tr><th>If they play…</th><th>Answer with…</th></tr>
+<tr><td><b>Teddy Tank / Marble Golem</b></td><td>Pillow Fort in the middle of your half pulls them off your keeps; then swarm with Wind-Up Mice, Yo-Yo Ninja or Toy Soldiers. Lullaby buys time.<br><span class="chip"><img src="img/pillow.png" alt="">Pillow Fort <i>4</i></span><span class="chip"><img src="img/mice.png" alt="">Wind-Up Mice <i>1</i></span><span class="chip"><img src="img/ninja.png" alt="">Yo-Yo Ninja <i>2</i></span><span class="chip"><img src="img/fairy.png" alt="">Lullaby <i>4</i></span></td></tr>
+<tr><td><b>Toy Train Ram</b></td><td>Put a building or a Tin Knight in its path; Jack-in-the-Box stops it cold.<br><span class="chip"><img src="img/jackbox.png" alt="">Jack-in-the-Box <i>3</i></span><span class="chip"><img src="img/pillow.png" alt="">Pillow Fort <i>4</i></span><span class="chip"><img src="img/knight.png" alt="">Tin Knight <i>3</i></span></td></tr>
+<tr><td><b>Balloon Bomber / Plush Dragon</b></td><td>Only troops that hit air can stop them: Kite Archers, Paper Planes, Plush Dragon, Crayon Wizard.<br><span class="chip"><img src="img/archer.png" alt="">Kite Archers <i>3</i></span><span class="chip"><img src="img/planes.png" alt="">Paper Planes <i>3</i></span><span class="chip"><img src="img/dragon.png" alt="">Plush Dragon <i>4</i></span><span class="chip"><img src="img/wizard.png" alt="">Crayon Wizard <i>5</i></span></td></tr>
+<tr><td><b>Groups: Paper Planes, Toy Soldiers, Archers</b></td><td>Splash damage: Bouncy Ball, Spinning Top, Plush Dragon, Crayon Wizard.<br><span class="chip"><img src="img/bomber.png" alt="">Bouncy Ball <i>3</i></span><span class="chip"><img src="img/top.png" alt="">Spinning Top <i>4</i></span><span class="chip"><img src="img/dragon.png" alt="">Plush Dragon <i>4</i></span><span class="chip"><img src="img/wizard.png" alt="">Crayon Wizard <i>5</i></span></td></tr>
+<tr><td><b>Block Catapult / Cork Cannon</b></td><td>Out-range or rush them: Toy Train, Balloon Bomber or a Bottle Rocket.<br><span class="chip"><img src="img/train.png" alt="">Toy Train Ram <i>4</i></span><span class="chip"><img src="img/balloon.png" alt="">Balloon Bomber <i>5</i></span><span class="chip"><img src="img/rocket.png" alt="">Bottle Rocket <i>5</i></span></td></tr>
+<tr><td><b>Plushy Rex / Rocking Horse Knight</b></td><td>Cheap blockers in front, ranged damage behind: Tin Knight + Duck Cannon + Kite Archers.<br><span class="chip"><img src="img/knight.png" alt="">Tin Knight <i>3</i></span><span class="chip"><img src="img/duck.png" alt="">Duck Cannon <i>3</i></span><span class="chip"><img src="img/archer.png" alt="">Kite Archers <i>3</i></span></td></tr>
+<tr><td><b>Crayon Wizard</b></td><td>Bottle Rocket, or a quick Yo-Yo Ninja right next to it.<br><span class="chip"><img src="img/rocket.png" alt="">Bottle Rocket <i>5</i></span><span class="chip"><img src="img/ninja.png" alt="">Yo-Yo Ninja <i>2</i></span></td></tr>
+  </table>
+</section>
+
+<section id="modes">
+  <h2>Game modes</h2>
+  <div class="grid g3">
+    <div class="box"><h3>Crown Road</h3><p>The main ladder. Win to earn <b>trophies</b> (+30, +33 for a 3-crown win), coins and a Toy Box. Lose and you drop up to 20 trophies, but never below the start of your current arena. Opponents are matched to <b>your card levels</b>, so it stays fair.</p></div>
+    <div class="box"><h3>Toy Story Mode</h3><p><b>20 story battles</b> against the Toy King's generals, each with a twist (stronger keeps, faster enemy Spark, a full Spark start…). Earn up to <b>3 stars</b> each. Works <b>offline</b>.</p></div>
+    <div class="box"><h3>Training</h3><p>Practise against the computer at <b>Easy, Normal, Hard or Champion</b>. No trophies won or lost: perfect for testing a new deck.</p></div>
+    <div class="box"><h3>Weekly Challenge</h3><p>A new challenge every week (Air Show, Rush Hour, Giant Clash, Builders' Battle, Knight Night, Toy Box Mayhem). <b>Both sides get the same deck at level 6</b>, so it is pure skill. Win <b>5</b> before you lose <b>3</b>: coins for every win, a Toy Box at 3 wins and a big Toy Box plus 300 coins at 5.</p></div>
+  </div>
+  <h3>The 8 arenas of the Crown Road</h3>
+  <table>
+    <tr><th>#</th><th>Arena</th><th>Trophies</th><th>New cards</th></tr>
+    <tr><td>1</td><td>Playroom Rug</td><td>0</td><td>Tin Knight, Duck Cannon, Paper Planes, Yo-Yo Ninja, Kite Archers, Teddy Tank, Bouncy Ball, Block Catapult</td></tr>
+    <tr><td>2</td><td>Attic Hideout</td><td>300</td><td>Robo Builder, Plush Dragon, Toy Soldiers, Wind-Up Mice</td></tr>
+    <tr><td>3</td><td>Bath-Time Bay</td><td>600</td><td>Toy Train Ram, Jack-in-the-Box, Cork Cannon</td></tr>
+    <tr><td>4</td><td>Garden Fort</td><td>1000</td><td>Spinning Top, Rocking Horse Knight</td></tr>
+    <tr><td>5</td><td>Kitchen Counter</td><td>1400</td><td>Crayon Wizard, Pillow Fort</td></tr>
+    <tr><td>6</td><td>Toy Shop Window</td><td>1900</td><td>Lullaby, Balloon Bomber, Bottle Rocket</td></tr>
+    <tr><td>7</td><td>Snow Globe</td><td>2500</td><td>Marble Golem, Plushy Rex</td></tr>
+    <tr><td>8</td><td>Dream Castle</td><td>3200</td><td>Top arena</td></tr>
+  </table>
+</section>
+
+<section id="story">
+  <h2>Toy Story Mode <small>all 20 battles</small></h2>
+  <p>Beat each battle to unlock the next. Stars: <b>1</b> for a win, <b>2</b> for 2+ crowns, <b>3</b> for a 3-crown win. Plays offline.</p>
+  <div class="story">
+    <div><b>First Steps<span class="diff d0">Easy</span></b><small>Drag cards onto your side. Knock down a keep!</small></div>
+    <div><b>Sky Paper<span class="diff d0">Easy</span></b><small>Paper Planes fly over the river.</small></div>
+    <div><b>Teddy Time<span class="diff d0">Easy</span></b><small>Teddy Tank goes straight for keeps. Protect it!</small></div>
+    <div><b>Bounce!<span class="diff d0">Easy</span></b><small>Drop a Bouncy Ball on crowds.</small></div>
+    <div><b>Catapult Hill<span class="diff d1">Normal</span></b><small>Buildings defend from far away.</small></div>
+    <div><b>Ninja Rush<span class="diff d1">Normal</span></b><small>Fast foes! React quickly.</small></div>
+    <div><b>Robo Wall<span class="diff d1">Normal</span></b><small>A sturdy robot leads the push.</small></div>
+    <div><b>Dragon&#x27;s Nest<span class="diff d1">Normal</span></b><small>Answer fliers with archers and planes.</small></div>
+    <div><b>Full Steam<span class="diff d1">Normal</span></b><small>The Toy Train charges your keeps!</small></div>
+    <div><b>Surprise Box<span class="diff d1">Normal</span></b><small>Watch out for Jack-in-the-Box traps. Enemy keeps +10%.</small></div>
+    <div><b>Spin Cycle<span class="diff d2">Hard</span></b><small>Spinning Tops hit everything around them.</small></div>
+    <div><b>Rainbow Magic<span class="diff d2">Hard</span></b><small>Crayon Wizards blast groups. Spread out!</small></div>
+    <div><b>Lullaby Land<span class="diff d2">Hard</span></b><small>The fairy puts your troops to sleep. Be patient.</small></div>
+    <div><b>Marble Giant<span class="diff d2">Hard</span></b><small>Stop the Marble Golem before it reaches you.</small></div>
+    <div><b>Double Trouble<span class="diff d2">Hard</span></b><small>The enemy gets Spark 25% faster.</small></div>
+    <div><b>Iron Keeps<span class="diff d2">Hard</span></b><small>Enemy keeps have +50% health.</small></div>
+    <div><b>Fast Start<span class="diff d2">Hard</span></b><small>You start with full Spark. Strike first!</small></div>
+    <div><b>Champion&#x27;s Gate<span class="diff d3">Champion</span></b><small>A Champion-level toy general.</small></div>
+    <div><b>Storm of Blocks<span class="diff d3">Champion</span></b><small>Buildings everywhere, and faster enemy Spark. Out-range them!</small></div>
+    <div><b>The Toy King<span class="diff d3">Champion</span></b><small>Final battle for the Dream Castle!</small></div>
+  </div>
+</section>
+
+<section id="progress">
+  <h2>Progress, rewards and fairness</h2>
+  <div class="grid g2">
+    <div class="box"><h3>Level up cards</h3><p>Collect <b>copies</b> of a card plus <b>coins</b> to upgrade it in the Deck tab (up to level 11). Each level gives +10% health and damage. Your keeps' level is the average level of your deck.</p></div>
+    <div class="box"><h3>Toy Boxes</h3><p>Win battles, claim the <b>free Toy Box every 4 hours</b>, and collect the <b>daily gift</b> (a 7-day streak, with boxes on days 3 and 6). Toy Box odds per card: <b>Common 70% · Rare 22% · Epic 7% · Legendary 1%</b>. Only cards from arenas you have reached can drop.</p></div>
+    <div class="box"><h3>Crown Road rewards</h3><p>27 free rewards along the trophy road, from 25 to 3,500 trophies: coins, Toy Boxes, and a <b>Big Toy Box</b> at every new arena. They use your <b>best</b> trophies ever, so a losing streak never takes them away.</p></div>
+    <div class="box"><h3>Daily quests</h3><p>Three new quests every day (win battles, take crowns, cast spells…), each paying coins, plus a <b>bonus Toy Box</b> when you finish all three.</p></div>
+    <div class="box"><h3>Shop</h3><p>Three <b>daily deals</b> let you buy card copies with coins you earned. Optional <b>coin packs</b> (from $0.99, bought through Google Play) only speed things up. Every card in the game can be earned for <b>free</b> by playing; there are no pay-only cards.</p></div>
+    <div class="box"><h3>Fair play promise</h3><p>Opponents are matched to your card levels. Odds for every random reward are shown in the game. No ads during battles (just a short one between some battles, and none in your first week), no pop-up offers, and no chat with strangers. A one-time Remove Ads purchase turns them off.</p></div>
+  </div>
+  <h3>Achievements (+100 coins each)</h3>
+  <p>First Victory · Perfect Smash (3-crown win) · First Upgrade · 10 Wins · 50 Wins · Story Complete.</p>
+</section>
+
+<section id="tips">
+  <h2>Top tips</h2>
+  <div class="grid g2">
+    <div class="box"><ul>
+      <li><b>Defend, then counter-attack.</b> Troops that survive your defence walk on to the enemy keep, making a free push.</li>
+      <li><b>Put tanks in front.</b> Teddy Tank soaks up hits while Duck Cannons and Archers shoot from behind.</li>
+      <li><b>Answer fliers</b> with Archers, Paper Planes, the Dragon or the Wizard. Knights, Ninjas and Soldiers can't hit them.</li>
+      <li><b>Pull troops to the middle.</b> A building placed in the centre of your half lures enemy troops into range of both your keeps.</li>
+    </ul></div>
+    <div class="box"><ul>
+      <li><b>Save Bouncy Ball for groups</b> (Planes, Archers, Ninjas) or to finish a weak keep.</li>
+      <li><b>Lullaby stops a big push</b>: put the Golem and its friends to sleep while your keeps keep shooting.</li>
+      <li><b>Pillow Fort pulls tanks</b> away from your keeps: place it in the middle of your half.</li>
+      <li><b>Watch the double-Spark minute</b>: it's the best time for a huge push.</li>
+      <li><b>Keep your average cost around 3.5</b> so you can always answer what your opponent plays.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="v1">
+  <h2>What's in version 1.0 <span class="tag live">Out now</span></h2>
+  <div class="box ver v1">
+    <div class="grid g2">
+      <ul>
+        <li>Real-time 3D battles on toy-room arenas, 3-minute matches + overtime</li>
+        <li>24 cards: 17 troops, 4 buildings, 3 spells, all original toy characters</li>
+        <li>Guided first battle that teaches every basic</li>
+        <li>Smart computer opponents at 4 difficulty levels</li>
+        <li>Crown Road with 8 arenas and trophies</li>
+        <li>Toy Story Mode: 20 battles with 3 stars each</li>
+        <li>Training mode and a Weekly Challenge (same deck for both sides)</li>
+        <li>27 free Crown Road rewards</li>
+      </ul>
+      <ul>
+        <li>Card collection and levels 1–11, deck builder with suggested decks and auto-build</li>
+        <li>Battle emotes</li>
+        <li>Free Toy Box every 4 hours, 7-day daily gift, daily shop deals</li>
+        <li>3 daily quests with a bonus Toy Box, 6 achievements, stats</li>
+        <li>Optional coin packs through Google Play</li>
+        <li>Sound effects and music, vibration, battery-saver graphics</li>
+        <li>Portrait + landscape, phones + tablets, works offline</li>
+        <li>Progress backed up to your Google account</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2>Roadmap <small>dates are targets and may move</small></h2>
+  <div class="grid">
+    <div class="box ver v11">
+      <h3>Version 1.1 "Polish &amp; Play" <span class="tag">Dec 2026</span></h3>
+      <ul>
+        <li>Google Play Games sign-in, cloud save, leaderboards and achievements</li>
+        <li>Languages: Arabic and Urdu (right-to-left), Spanish, Portuguese, French, Turkish, Indonesian, Hindi, German</li>
+        <li>Accessibility: colour-blind team colours, bigger text, reduce motion, left-hand layout</li>
+        <li>More cards (32 total) and upgraded 3D character models built from the Gemini turnaround art</li>
+        <li>Cards and menus translated (store pages already in 10 languages)</li>
+        <li>Battle replays</li>
+      </ul>
+    </div>
+    <div class="box ver v2">
+      <h3>Version 2.0 "Live &amp; Together" <span class="tag">Q1 2027</span></h3>
+      <ul>
+        <li><b>Live 1v1 against real players</b> (dedicated game server, fast matchmaking by card level)</li>
+        <li><b>Ranked League</b>: every card at the same level, so only skill counts</li>
+        <li><b>Guilds</b> (up to 30 players), card sharing, guild chest</li>
+        <li><b>Duo Battle</b> (2v2 with a friend) and Friendly Battles</li>
+        <li>Safe quick-chat (preset phrases + emotes only, mute with one tap), report/block</li>
+        <li>Spectate friends, share replays, Keep Pass season track (free lane for everyone)</li>
+      </ul>
+    </div>
+    <div class="box ver v3">
+      <h3>Version 3.0 "Party &amp; Worlds" <span class="tag">Q2–Q3 2027</span></h3>
+      <ul>
+        <li><b>Co-op Boss Raids</b>: 2 players vs a giant toy boss, weekly bosses</li>
+        <li><b>Couch Duel</b> (2 players on one tablet) and <b>Nearby Battle</b> on the same Wi-Fi</li>
+        <li>Party modes: Draft Duel, Mirror, Triple Spark, Goal Line, Chaos Cards, Mode Wheel</li>
+        <li><b>Merge Camp</b> auto-battler mode</li>
+        <li>Champions (cards with a tap ability) and Ascended card forms</li>
+        <li>40+ cards, Story Mode to 60 battles, Tournaments and Guild Wars</li>
+        <li>Holiday seasons: Ramadan &amp; Eid, Diwali, Lunar New Year, Christmas, World Cup</li>
+      </ul>
+    </div>
+    <div class="box ver">
+      <h3>Later</h3>
+      <ul>
+        <li><b>Keepsmash on iPhone and iPad</b> (see the plan below)</li>
+        <li><b>Wonder Squad kids' edition</b>: no ads, no chat, no purchases without a grown-up</li>
+        <li>New card every two weeks, new arena and season every month</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="rollout">
+  <h2>Full rollout plan</h2>
+  <div class="timeline">
+    <div class="box"><h3>Stage 1: Build &amp; test (Nov 2026)</h3><p>Version 1.0 built with Godot as a native Android app (no web view). Automated bot-vs-bot tests check that every match finishes and every card works; screenshots are checked on a phone-sized screen.</p></div>
+    <div class="box"><h3>Stage 2: Google Play internal test (Nov 2026)</h3><p>Signed app bundle uploaded to the internal testing track; tested on real phones and tablets (portrait, landscape, low-end mode).</p></div>
+    <div class="box"><h3>Stage 3: Production review (Nov 2026)</h3><p>Store listing, content rating (Everyone, mild cartoon fantasy violence), data safety (no data collected), privacy policy and screenshots completed; sent to Google for review. Available in all countries Google Play supports.</p></div>
+    <div class="box"><h3>Stage 4: Staged rollout (after approval)</h3><p>New updates roll out to 20% → 50% → 100% of players over about a week while crash reports and reviews are watched. Version 1.0 goes to everyone at once because it is the first release.</p></div>
+    <div class="box"><h3>Stage 5: Listen &amp; improve (Dec 2026)</h3><p>Player feedback (in-game "Send feedback" and Play reviews) shapes version 1.1. Card balance is tuned on a fixed schedule with notes on this page.</p></div>
+    <div class="box"><h3>Stage 6: Online (Q1 2027)</h3><p>Version 2.0 adds the live game server. It starts as an open beta in a few countries, then goes worldwide once matchmaking times and server costs are proven.</p></div>
+    <div class="box"><h3>Stage 7: iPhone &amp; iPad (Q2 2027)</h3><p>The Apple App Store launch follows the plan below, with the same save game on both systems once sign-in arrives.</p></div>
+  </div>
+</section>
+
+<section id="apple">
+  <h2>Plan for Apple (iPhone &amp; iPad)</h2>
+  <div class="grid g2">
+    <div class="box">
+      <h3>Why it's ready for Apple</h3>
+      <p>Keepsmash is made with the <b>Godot</b> engine, which exports native iOS apps from the same project. The battle engine, menus, toy models and sounds are shared; only store and sign-in pieces differ.</p>
+      <h3>What's needed</h3>
+      <ul>
+        <li><b>Apple Developer Program</b> membership (US$99 a year) for BriskNest US LLC (needs the company's D-U-N-S number)</li>
+        <li>A <b>Mac with Xcode</b>, or a cloud Mac build (for example GitHub Actions macOS runners) to compile and sign the app</li>
+        <li>App Store Connect listing, iPhone and iPad screenshots, App Privacy "nutrition label" (no data collected in v1)</li>
+        <li>Age rating questionnaire (4+/9+ for mild cartoon violence)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Steps</h3>
+      <ol>
+        <li>Enrol BriskNest US LLC in the Apple Developer Program.</li>
+        <li>Add an iOS export preset; adapt safe areas (notch, Dynamic Island) and test on iPhone SE → iPad Pro.</li>
+        <li>Replace Google-only features: <b>Game Center</b> for leaderboards/achievements, <b>iCloud</b> save, <b>StoreKit</b> for optional coin packs.</li>
+        <li>Build on macOS CI, upload to <b>TestFlight</b>, beta with friends and family.</li>
+        <li>Submit for App Store review; release worldwide.</li>
+        <li>Cross-play: iPhone and Android players meet in the same online battles from version 2.0.</li>
+      </ol>
+      <p class="note">Target: Q2 2027, after version 2.0 proves the online server.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="grid g2">
+    <div class="box"><h3>Is Keepsmash free?</h3><p>Yes. The whole game is free to play. All cards, arenas and modes can be earned by playing.</p></div>
+    <div class="box"><h3>Do I need the internet?</h3><p>No. Version 1.0 plays fully offline against computer opponents. Online battles arrive in version 2.0.</p></div>
+    <div class="box"><h3>How do I keep my progress on a new phone?</h3><p>Version 1.0 uses Android's backup to your Google account: sign in with the same Google account on the new phone and restore. Play Games cloud save comes in 1.1.</p></div>
+    <div class="box"><h3>Is it OK for kids?</h3><p>Battles are toys bonking toys: no blood, no chat with strangers, and no ads in your first week (after that, short ads between some battles, never during one). A dedicated Wonder Squad kids' edition is planned.</p></div>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>Release notes</h2>
+  <div class="box"><h3>Version 1.0.0 <small>· first release (Nov 2026)</small></h3>
+  <ul>
+    <li>24 toy cards: 17 troops, 4 buildings, 3 spells, from Common to Legendary.</li>
+    <li>Crown Road with 8 arenas, Toy Story Mode with 20 battles, and Training against 4 bot levels.</li>
+    <li>Guided first battle, daily quests, a free Toy Box every 4 hours, a 7-day daily gift and daily shop deals.</li>
+    <li>Optional coin packs through Google Play (from $0.99). Every card can be earned for free.</li>
+    <li>Weekly Challenge with a new fixed-deck challenge every week, and 27 Crown Road rewards.</li>
+    <li>Battle emotes (Good luck!, Wow!, Oops!, Good game!) that the bots answer, and a setting to turn them off.</li>
+    <li>Suggested decks and Auto-build deck, a new results screen, and resource pills and tab icons in the menus.</li>
+    <li>Phones and tablets, portrait and landscape, battery-saver mode, Android Back button support, progress backup.</li>
+  </ul></div>
+</section>
+
+<section id="press" class="press">
+  <h2>Press kit</h2>
+  <div class="grid g2">
+    <div class="box"><h3>Fact sheet</h3><p><b>Game:</b> Keepsmash: Toy Card Battles<br><b>Genre:</b> real-time 3D card battle (strategy)<br><b>Platform:</b> Android (Google Play); iPhone/iPad planned<br><b>Price:</b> free, contains ads, optional in-app purchases (coin packs, Remove Ads)<br><b>Developer:</b> BriskNest · Hassan Azhar<br><b>Release:</b> 2026<br><b>Contact:</b> <a href="mailto:hassan.azhar@brisknest.us">hassan.azhar@brisknest.us</a></p></div>
+    <div class="box"><h3>Downloads</h3><ul>
+      <li><a href="img/icon.png" download>App icon (512×512 PNG)</a></li>
+      <li><a href="img/keyart.jpg" download>Key art (JPG)</a></li>
+      <li><a href="img/feature.png" download>Feature banner (1024×500 PNG)</a></li>
+      <li><a href="media/keepsmash-trailer.mp4" download>Trailer (30 s, 720p MP4)</a></li>
+      <li>Screenshots: tap any picture in <a href="#gallery">Pictures</a> and save it.</li>
+    </ul><p><small>You may use these to write about or show Keepsmash.</small></p></div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <p><b>Keepsmash</b> is made by BriskNest Arcade · © Hassan Azhar · <a href="privacy.html">Privacy policy</a> · <a href="mailto:hassan.azhar@brisknest.us">Contact &amp; feedback</a> · <a href="../">More BriskNest games</a></p>
+  <p class="note" style="color:#d9c4a3">Keepsmash is an original game and is not affiliated with any other card battle game.</p>
+</footer>
+<div id="lb" role="dialog" aria-label="Picture viewer"><button class="close" aria-label="Close">✕</button><button class="prev" aria-label="Previous">‹</button><img alt=""><p></p><button class="next" aria-label="Next">›</button></div>
+<script>
+(function(){var f=[].slice.call(document.querySelectorAll('.gallery img')),lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('p'),i=0;
+function show(n){i=(n+f.length)%f.length;im.src=f[i].dataset.full;im.alt=f[i].alt;cap.textContent=(i+1)+' / '+f.length+' · '+f[i].alt;lb.classList.add('on')}
+f.forEach(function(e,n){e.parentNode.addEventListener('click',function(){show(n)})});
+lb.querySelector('.prev').onclick=function(e){e.stopPropagation();show(i-1)};lb.querySelector('.next').onclick=function(e){e.stopPropagation();show(i+1)};
+lb.querySelector('.close').onclick=function(){lb.classList.remove('on')};lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
+var x0=null;lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX});lb.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(d<0?i+1:i-1);x0=null});})();
+</script>
+</body>
+</html>
